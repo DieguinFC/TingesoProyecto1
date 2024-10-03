@@ -12,8 +12,11 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CreditoEntidad {
 
-    private int M;
-    private int P;
-    private float R;
-    private int n;
+    private int cuota;
+    private int monto_prestamo;
+    private float tasa_interes_anual;
+    private int plazo;
+    private float desgravamen;
+    private int seguro_incendio;
+    private float comision_por_admin;
 }
