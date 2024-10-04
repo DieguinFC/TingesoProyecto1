@@ -1,5 +1,7 @@
 package tingeso.demo.entidades;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +14,9 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "client")
+@Entity
+
 public class ClienteEntidad {
     private Long id;
     private String rut;
