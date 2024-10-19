@@ -28,11 +28,28 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgb(184, 143, 39);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items:first baseline;
+  padding: 1.5em 2em;
+  background-color: #b07a05;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2em;
   line-height: 1.1;
+  font-family: 'Times New Roman', sans-serif; /* Cambia la tipografía a Arial */
+  color: white; /* Color del texto del header */
+  margin: 0; /* Elimina los márgenes por defecto */
 }
 
 button {
