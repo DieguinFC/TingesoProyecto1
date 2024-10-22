@@ -1,13 +1,13 @@
 package tingeso.demo.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter
@@ -17,16 +17,12 @@ import java.time.LocalDate;
 @Table(name = "client")
 @Entity
 
-public class ClienteEntidad {
+public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String rut;
+
     private String nombre;
-
-    private boolean registro;
-    private int ingreso;
-
-    private LocalDate fecha_nacimiento;
-
-
-
+    private String email;
+    private BigDecimal ingresos;
 }
