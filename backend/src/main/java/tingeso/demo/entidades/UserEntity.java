@@ -14,15 +14,21 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "client")
-@Entity
 
-public class Usuario {
+@Entity
+@Table(name = "users") // Define el nombre de la tabla como 'users'
+public class UserEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nombre;
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false, unique = true) // El correo debe ser único para evitar duplicados
     private String email;
-    private BigDecimal ingresos;
+
+    @Column(nullable = false)
+    private BigDecimal income; // BigDecimal para valores monetarios
 }
