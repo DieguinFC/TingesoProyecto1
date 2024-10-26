@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tingeso.demo.entidades.CreditSimulationEntity;
 import tingeso.demo.servicios.CreditSimulationService;
-
 import java.math.BigDecimal;
 
 @RestController

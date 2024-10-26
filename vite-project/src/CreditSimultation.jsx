@@ -14,7 +14,7 @@ function CreditSimulation() {
 
     try {
       // Realiza la solicitud al backend
-      const response = await axios.post('http://localhost:5173/api/credit/simulate', {
+      const response = await axios.post('http://localhost:5173/api/creditsimulation', {
         loanAmount: parseFloat(loanAmount),
         annualInterestRate: parseFloat(annualInterestRate),
         term: parseInt(term, 10)
