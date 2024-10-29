@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Impact, 'Arial', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -35,7 +35,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items:first baseline;
-  padding: 1.5em 2em;
+  padding: 10px, 20px;
   background-color: #b07a05;
   width: 100%;
   position: fixed;
