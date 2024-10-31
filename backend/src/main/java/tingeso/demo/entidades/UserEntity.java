@@ -14,7 +14,6 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
 @Entity
 @Table(name = "users") // Define el nombre de la tabla como 'users'
 public class UserEntity {
@@ -30,5 +29,11 @@ public class UserEntity {
     private String email;
 
     @Column(nullable = false)
+    private String password; // Para almacenar la contraseña del usuario
+
+    @Column(nullable = false)
     private BigDecimal income; // BigDecimal para valores monetarios
+
+    @Column(name = "registration_date", nullable = false)
+    private LocalDate registrationDate; // Fecha de registro del usuario
 }

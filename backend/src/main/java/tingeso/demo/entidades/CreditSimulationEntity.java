@@ -2,6 +2,9 @@ package tingeso.demo.entidades;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,9 +18,14 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Entity
 public class CreditSimulationEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Genera un valor único automáticamente
+    private Long id;
+
     private BigDecimal loanAmount;
     private float annualInterestRate;
-    private int term; // Plazo en años o meses
+    private int term;
 
 }
 

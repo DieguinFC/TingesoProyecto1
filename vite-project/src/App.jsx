@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
-import './App.css';
-import './CreditSimultation.jsx';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
-
-
+import './App.css';
+import CreditSimulation from './CreditSimulation.jsx';
+import Register from './Register.jsx'; // Importa el componente Register
 
 function HomePage() {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    // Redirige a la ruta "/simulate"
-    navigate('/simulate');
+  const handleClick = (path) => {
+    navigate(path); // Permite navegar a rutas dinámicas
   };
 
   return (
     <div className="card">
-      <p>Bancan chat?</p> {/* Mensaje de bienvenida */}
-      <button onClick={handleClick}>Simulación de Crédito</button>
-    </div>
-  );
-}
-
-function CreditSimulation() {
-  return (
-    <div>
-      <h2>Bienvenido a la Simulación de Crédito</h2>
-      <p>Esta es la página de simulación de crédito.</p>
+      <p>Bancan chat?</p>
+      <button onClick={() => handleClick('/simulate')}>Simulación de Crédito</button>
+      <button className="button2" onClick={() => handleClick('/register')}>
+        Registrarse
+      </button> {/* Botón de registro */}
     </div>
   );
 }
@@ -33,7 +25,6 @@ function CreditSimulation() {
 function App() {
   return (
     <Router>
-      {/* Cabezera permanente */}
       <header>
         <Link to="/" style={{ textDecoration: 'none', fontSize: '2em', color: 'inherit' }}>
           BankChat
@@ -41,11 +32,9 @@ function App() {
       </header>
 
       <Routes>
-        {/* Ruta de inicio */}
         <Route path="/" element={<HomePage />} />
-
-        {/* Ruta para la simulación de crédito */}
         <Route path="/simulate" element={<CreditSimulation />} />
+        <Route path="/register" element={<Register />} />  Ruta de registro 
       </Routes>
     </Router>
   );
