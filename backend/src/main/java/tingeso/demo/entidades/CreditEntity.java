@@ -4,41 +4,41 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.math.BigDecimal;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "creditos")
+@Table(name = "credits")
 public class CreditEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Primary key of the entity
+    private Long id;
 
     @Column(nullable = false)
-    private BigDecimal monthlyPayment; // Cuota
+    private BigDecimal monthlyPayment;
 
     @Column(nullable = false)
-    private BigDecimal loanAmount; // Monto del préstamo
+    private BigDecimal loanAmount;
+
+    @Column(nullable = false, precision = 5, scale = 2)
+    private BigDecimal annualInterestRate;
 
     @Column(nullable = false)
-    private float annualInterestRate; // Tasa de interés anual
+    private int term;
 
     @Column(nullable = false)
-    private int term; // Plazo
+    private BigDecimal lifeInsurance;
 
     @Column(nullable = false)
-    private BigDecimal lifeInsurance; // Desgravamen
+    private BigDecimal fireInsurance;
 
     @Column(nullable = false)
-    private int fireInsurance; // Seguro de incendio
+    private BigDecimal adminFee;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private BigDecimal adminFee; // Comisión por administración
+    private CreditType loanType; // Tipo de préstamo
 }
