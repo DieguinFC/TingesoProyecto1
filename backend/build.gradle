@@ -36,3 +36,17 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+tasks.named('bootJar') {
+	manifest {
+		attributes(
+				'Start-Class': 'capas.DemoApplication'
+		)
+	}
+}
+
+
+
+jar {
+	archiveBaseName.set('backend')
+	archiveVersion.set('1.1')
+}

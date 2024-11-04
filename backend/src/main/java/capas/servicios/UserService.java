@@ -1,9 +1,9 @@
-package tingeso.demo.servicios;
+package capas.servicios;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tingeso.demo.entidades.UserEntity;
-import tingeso.demo.repos.UserRepository;
+import capas.entidades.UserEntity;
+import capas.repos.UserRepository;
 
 import java.time.LocalDate;
 
@@ -24,6 +24,9 @@ public class UserService {
 
         // Guardar el usuario en la base de datos
         return userRepository.save(user);
+    }
+    public boolean userExists(String email) {
+        return userRepository.existsByEmail(email); // Utiliza el método del repositorio
     }
 }
 

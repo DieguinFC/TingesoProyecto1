@@ -1,4 +1,4 @@
-package tingeso.demo.entidades;
+package capas.entidades;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

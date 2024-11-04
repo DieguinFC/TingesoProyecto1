@@ -1,4 +1,4 @@
-package tingeso.demo.entidades;
+package capas.entidades;
 
 
 import jakarta.persistence.Entity;
@@ -26,6 +26,8 @@ public class CreditSimulationEntity {
     private BigDecimal loanAmount;
     private float annualInterestRate;
     private int term;
+
+    private String email;
 
 }
 

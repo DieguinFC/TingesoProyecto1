@@ -1,8 +1,8 @@
-package tingeso.demo.repos;
+package capas.repos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import tingeso.demo.entidades.CreditType;
+import capas.entidades.CreditType;
 
 @Repository
 public interface CreditTypeRepository extends JpaRepository<CreditType, Long> {

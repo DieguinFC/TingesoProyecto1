@@ -1,4 +1,4 @@
-package tingeso.demo.servicios;
+package capas.servicios;
 
 import org.springframework.stereotype.Service;
         import java.math.BigDecimal;
