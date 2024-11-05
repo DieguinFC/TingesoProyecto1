@@ -14,7 +14,7 @@ function HomePage() {
 
   return (
     <div className="card">
-      <p>Bancan chat?</p>
+      <p>Selecciona una opción</p>
       <button onClick={() => handleClick('/simulate')}>Simulación de Crédito</button>
       <button className="button2" onClick={() => handleClick('/register')}>
         Registrarse
@@ -31,7 +31,7 @@ function App() {
     <Router>
       <header>
         <Link to="/" style={{ textDecoration: 'none', fontSize: '2em', color: 'inherit' }}>
-          BankChat
+          PrestaBanco
         </Link>
       </header>
 

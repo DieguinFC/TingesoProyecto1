@@ -26,7 +26,7 @@ function CreditRegistration() {
 
     try {
       // Enviar la solicitud de crédito
-      await axios.post('http://localhost:8090/api/credit-request', {
+      await axios.post('/api/credit-request', {
         requestedAmount: loanAmount,
         termInYears: term,
         creditType: { id: creditTypeId }, // Enviar solo el ID del tipo de crédito

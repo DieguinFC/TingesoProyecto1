@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/api/creditsimulation")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 public class CreditSimulationController {
 
     @Autowired
