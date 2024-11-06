@@ -58,26 +58,6 @@ class UserTests {
 		assertEquals(user.getEmail(), result.getEmail());
 		assertNotNull(result.getRegistrationDate());  // Verifica que la fecha de registro no sea nula
 	}
-
-
-	void testRegisterUser_EmailAlreadyExists() {
-		// Crear un usuario con un correo electrónico
-		UserEntity user = new UserEntity();
-		user.setEmail("test@example.com");
-
-		// Simula que el correo ya está registrado en el repositorio
-		when(userRepository.existsByEmail(user.getEmail())).thenReturn(true);
-
-		// Llamada al controlador
-		ResponseEntity<String> response = userController.registerUser(user);
-
-		// Verifica que el código de respuesta sea BAD_REQUEST (400)
-		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-		// Verifica que el mensaje de la respuesta sea el esperado
-		assertEquals("El correo electrónico ya está registrado.", response.getBody());
-	}
-
-
 	@Test
 	void testUserService_RegisterUser_Success() {
 		UserEntity user = new UserEntity();
