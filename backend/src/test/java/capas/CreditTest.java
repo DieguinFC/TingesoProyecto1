@@ -5,18 +5,19 @@ import capas.repos.CreditRepository;
 import capas.servicios.CreditService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import static org.mockito.Mockito.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 public class CreditTest {
 
     @InjectMocks
@@ -48,6 +49,9 @@ public class CreditTest {
         assertNotNull(createdRequest);
         assertEquals(creditRequest.getEmail(), createdRequest.getEmail());
         assertEquals(creditRequest.getRequestedAmount(), createdRequest.getRequestedAmount());
+
+        // Verificamos que el repositorio haya sido llamado
+        verify(creditRepository).save(creditRequest);
     }
 
     @Test
@@ -61,6 +65,9 @@ public class CreditTest {
         // Verificamos que la solicitud encontrada no sea nula y que sus valores sean correctos
         assertNotNull(foundRequest);
         assertEquals(creditRequest.getEmail(), foundRequest.getEmail());
+
+        // Verificamos que el repositorio haya sido llamado con el ID esperado
+        verify(creditRepository).findById(1L);
     }
 
     @Test
@@ -75,5 +82,8 @@ public class CreditTest {
         assertNotNull(creditRequests);
         assertFalse(creditRequests.isEmpty());
         assertEquals(1, creditRequests.size());  // Esperamos una solicitud en la lista
+
+        // Verificamos que el repositorio haya sido llamado
+        verify(creditRepository).findAll();
     }
 }

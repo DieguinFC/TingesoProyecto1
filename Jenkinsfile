@@ -3,7 +3,6 @@ pipeline {
     tools {
         gradle 'gradle'
         nodejs 'node'
-        git 'git'   
     }
 
     stages {
@@ -20,7 +19,13 @@ pipeline {
         stage('Build Back') {
             steps {
                 script {
-                    bat './gradlew clean build' 
+                    if (isUnix()) {
+                        // Cambia al directorio 'backend' antes de ejecutar gradle
+                        sh 'cd backend && chmod +x gradlew && ./gradlew clean build'  // Para Unix/Linux
+                    } else {
+                        // En sistemas Windows (si fuera necesario)
+                        bat 'cd backend && gradlew clean build'  // Para Windows
+                    }
                 }
             }
         }
@@ -28,7 +33,11 @@ pipeline {
         stage('Unit Tests Back') {
             steps {
                 script {
-                    bat './gradlew test' 
+                    if (isUnix()) {
+                        sh 'cd backend && ./gradlew test'  // Para Unix/Linux
+                    } else {
+                        bat 'cd backend && gradlew test'  // Para Windows
+                    }
                 }
             }
         }
@@ -36,7 +45,11 @@ pipeline {
         stage('Build Docker Image for Backend') {
             steps {
                 script {
-                    bat 'docker build -t shezy1/backimage:latest .'
+                    if (isUnix()) {
+                        sh 'cd backend && docker build -t shezy1/backimage:latest .'  // Para Unix/Linux
+                    } else {
+                        bat 'cd backend && docker build -t shezy1/backimage:latest .'  // Para Windows
+                    }
                 }
             }
         }
@@ -45,9 +58,17 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'goodance1', variable: 'DOCKERHUB_PASS')]) {
-                        bat 'docker login -u shezy1 -p %DOCKERHUB_PASS%'
+                        if (isUnix()) {
+                            sh 'cd backend && docker login -u shezy1 -p $DOCKERHUB_PASS'  // Para Unix/Linux
+                        } else {
+                            bat 'cd backend && docker login -u shezy1 -p %DOCKERHUB_PASS%'  // Para Windows
+                        }
                     }
-                    bat 'docker push shezy1/backimage:latest'
+                    if (isUnix()) {
+                        sh 'cd backend && docker push shezy1/backimage:latest'  // Para Unix/Linux
+                    } else {
+                        bat 'cd backend && docker push shezy1/backimage:latest'  // Para Windows
+                    }
                 }
             }
         }
@@ -65,9 +86,14 @@ pipeline {
         stage('Build Front') {
             steps {
                 script {
-                    // Asegúrate de que el contenedor tenga las dependencias necesarias para el frontend
-                    bat 'npm install' // Usar 'npm install' para instalar dependencias (si estás usando npm)
-                    bat 'npm run build' // Ejecuta el build del frontend, cambia si tu script se llama diferente
+                    if (isUnix()) {
+                        // Cambia al directorio 'vite-project' antes de ejecutar npm
+                        sh 'cd vite-project && npm install'  // Para Unix/Linux
+                        sh 'cd vite-project && npm run build'  // Para Unix/Linux
+                    } else {
+                        bat 'cd vite-project && npm install'  // Para Windows
+                        bat 'cd vite-project && npm run build'  // Para Windows
+                    }
                 }
             }
         }
@@ -75,8 +101,11 @@ pipeline {
         stage('Build Docker Image for Frontend') {
             steps {
                 script {
-                    // Construye la imagen de Docker para el frontend
-                    bat 'docker build -t shezy1/frontimage:latest .'
+                    if (isUnix()) {
+                        sh 'cd vite-project && docker build -t shezy1/frontimage:latest .'  // Para Unix/Linux
+                    } else {
+                        bat 'cd vite-project && docker build -t shezy1/frontimage:latest .'  // Para Windows
+                    }
                 }
             }
         }
@@ -85,11 +114,17 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'goodance1', variable: 'DOCKERHUB_PASS')]) {
-                        // Inicia sesión en Docker Hub
-                        bat 'docker login -u shezy1 -p %DOCKERHUB_PASS%'
+                        if (isUnix()) {
+                            sh 'cd vite-project && docker login -u shezy1 -p $DOCKERHUB_PASS'  // Para Unix/Linux
+                        } else {
+                            bat 'cd vite-project && docker login -u shezy1 -p %DOCKERHUB_PASS%'  // Para Windows
+                        }
                     }
-                    // Publica la imagen en Docker Hub
-                    bat 'docker push shezy1/frontimage:latest'
+                    if (isUnix()) {
+                        sh 'cd vite-project && docker push shezy1/frontimage:latest'  // Para Unix/Linux
+                    } else {
+                        bat 'cd vite-project && docker push shezy1/frontimage:latest'  // Para Windows
+                    }
                 }
             }
         }
