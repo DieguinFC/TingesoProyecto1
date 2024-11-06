@@ -57,7 +57,7 @@ pipeline {
         stage('Push Docker Image for Backend') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'goodance1', variable: 'DOCKERHUB_PASS')]) {
+                    withCredentials([string(credentialsId: 'DOCKERHUB_PASS', variable: 'DOCKERHUB_PASS')]) {
                         if (isUnix()) {
                             sh 'cd backend && docker login -u shezy1 -p $DOCKERHUB_PASS'  // Para Unix/Linux
                         } else {
@@ -113,7 +113,7 @@ pipeline {
         stage('Push Docker Image for Frontend') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'goodance1', variable: 'DOCKERHUB_PASS')]) {
+                    withCredentials([string(credentialsId: 'DOCKERHUB_PASS', variable: 'DOCKERHUB_PASS')]) {
                         if (isUnix()) {
                             sh 'cd vite-project && docker login -u shezy1 -p $DOCKERHUB_PASS'  // Para Unix/Linux
                         } else {
