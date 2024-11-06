@@ -13,6 +13,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+
     public UserEntity registerUser(UserEntity user) {
         // Verificar si el correo electrónico ya está registrado
         if (userRepository.existsByEmail(user.getEmail())) {

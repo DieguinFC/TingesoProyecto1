@@ -11,7 +11,7 @@ function CreditRegistration() {
   const [loanAmount, setLoanAmount] = useState('');
   const [term, setTerm] = useState('');
   const [creditTypeId, setCreditTypeId] = useState(''); // Cambiado a creditTypeId
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState(''); // Estado para mostrar el mensaje
 
   // Obtener los tipos de crédito al cargar el componente
   const creditTypes = [
@@ -26,18 +26,30 @@ function CreditRegistration() {
 
     try {
       // Enviar la solicitud de crédito
-      await axios.post('/api/credit-request', {
+      const response = await axios.post('/api/credit-request', {
         requestedAmount: loanAmount,
         termInYears: term,
-        creditType: { id: creditTypeId }, // Enviar solo el ID del tipo de crédito
+        creditType: { id: Number(creditTypeId) },
         email,
-        income
+        income,
       });
 
-      setMessage('Registro y solicitud de crédito realizados con éxito.');
+      // Verificar que la respuesta sea un string
+      if (typeof response.data === 'string') {
+        setMessage(response.data); // Si la respuesta es un string, usarlo directamente
+      } else if (response.data && response.data.message) {
+        setMessage(response.data.message); // Si es un objeto, mostrar el mensaje contenido
+      } else {
+        setMessage('Solicitud de crédito realizada con éxito.'); // Mensaje por defecto en caso de éxito
+      }
     } catch (error) {
-      console.error('Error al registrar:', error);
-      setMessage('Hubo un error al realizar el registro.');
+      // Manejo de errores
+      if (error.response && error.response.status === 400) {
+        setMessage(error.response.data); // Establecer mensaje de error del backend
+      } else {
+        console.error('Error al realizar el registro:', error);
+        setMessage('Hubo un error al realizar el registro.'); // Mensaje genérico
+      }
     }
   };
 
@@ -111,6 +123,8 @@ function CreditRegistration() {
           Registrar y Solicitar Crédito
         </button>
       </form>
+
+      {/* Aquí se muestra el mensaje de éxito o error */}
       {message && <p className="credit-registration-message">{message}</p>}
     </div>
   );

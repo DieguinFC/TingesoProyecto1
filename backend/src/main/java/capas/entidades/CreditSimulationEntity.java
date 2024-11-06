@@ -18,16 +18,12 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Entity
 public class CreditSimulationEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Genera un valor único automáticamente
     private Long id;
-
     private BigDecimal loanAmount;
     private float annualInterestRate;
     private int term;
-
     private String email;
-
 }
 

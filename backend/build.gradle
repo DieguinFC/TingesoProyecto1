@@ -27,10 +27,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
-    implementation 'org.postgresql:postgresql:42.5.4'
+	implementation 'org.postgresql:postgresql:42.5.4'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Dependencias para pruebas
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'  // Spring Boot testing (incluye JUnit 5 y Mockito)
+	testImplementation 'org.mockito:mockito-junit-jupiter:4.6.1'  // Mockito con soporte para JUnit 5
 }
 
 tasks.named('test') {

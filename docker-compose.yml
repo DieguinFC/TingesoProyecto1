@@ -5,7 +5,7 @@ services:
     build:
       context: ./vite-project  
       dockerfile: Dockerfile
-    image: frontimage:latest 
+    image: shezy1/frontimage:latest 
     ports:
       - "5173:80"
     volumes:
@@ -19,7 +19,7 @@ services:
     build:
       context: ./backend  
       dockerfile: Dockerfile  
-    image: backimage:latest 
+    image: shezy1/backimage:latest 
     ports:
       - "8090:8090"
     environment:
