@@ -33,6 +33,19 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
+  jenkins:
+    container_name: JenkinsContainer
+    image: shezy1/jenkinsimage:latest
+    ports:
+      - "8080:8080"  
+      - "50000:50000"  
+    volumes:
+      - jenkins_home:/var/jenkins_home  
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false  
+    deploy:
+      restart_policy:
+        condition: on-failure
 
   postgres:
     container_name: DBContainer
@@ -48,3 +61,4 @@ services:
 
 volumes:
   postgres_data:
+  jenkins_home:
