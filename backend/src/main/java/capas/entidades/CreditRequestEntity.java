@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -29,4 +31,12 @@ public class CreditRequestEntity {
     @ManyToOne
     @JoinColumn(name = "credit_type_id", nullable = false) // Nombre de la columna en la tabla credit_requests
     private CreditType creditType; // Referencia al tipo de crédito
+
+    @Column(nullable = false)
+    private String status; // Estado de la solicitud (ejemplo: "Pendiente", "Evaluada", "Aceptada", "Rechazada")
+
+    @ElementCollection
+    @CollectionTable(name = "credit_request_files", joinColumns = @JoinColumn(name = "credit_request_id"))
+    @Column(name = "file_path")
+    private List<String> files; // Lista de rutas de los archivos cargados
 }
