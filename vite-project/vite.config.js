@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://backcontainer:8090', // Dirección del backend de Spring Boot
+        target: 'http://localhost:8090', // Dirección del backend de Spring Boot
         changeOrigin: true,
         secure: false,
       },

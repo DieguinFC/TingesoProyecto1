@@ -12,31 +12,30 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "credit_requests") // Renombrado para reflejar que son solicitudes de crédito
+@Table(name = "credit_requests")
 public class CreditRequestEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true) // El correo debe ser único para evitar duplicados
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
-    private BigDecimal requestedAmount; // Monto solicitado por el cliente
+    private BigDecimal requestedAmount;
 
     @Column(nullable = false)
-    private int termInYears; // Plazo en años para el préstamo
+    private int termInYears;
 
-    @ManyToOne
-    @JoinColumn(name = "credit_type_id", nullable = false) // Nombre de la columna en la tabla credit_requests
-    private CreditType creditType; // Referencia al tipo de crédito
+    @Column(name = "credit_type_id", nullable = false)
+    private Long creditTypeId; // Solo guardamos el ID de CreditType como clave foránea
 
     @Column(nullable = false)
-    private String status; // Estado de la solicitud (ejemplo: "Pendiente", "Evaluada", "Aceptada", "Rechazada")
+    private String status;
 
     @ElementCollection
     @CollectionTable(name = "credit_request_files", joinColumns = @JoinColumn(name = "credit_request_id"))
     @Column(name = "file_path")
-    private List<String> files; // Lista de rutas de los archivos cargados
+    private List<String> files;
 }
