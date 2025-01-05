@@ -5,6 +5,7 @@ import capas.entidades.CreditRequestEntity;
 import capas.servicios.CreditEvaluationService;
 import capas.servicios.CreditService;  // Asegúrate de tener el servicio de CreditRequest disponible
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,11 +37,28 @@ public class CreditEvaluationController {
 
     // Método para evaluar un crédito basado en una solicitud
     @PostMapping("/evaluate")
-    public ResponseEntity<CreditEvaluationEntity> evaluateCredit(@RequestBody CreditRequestEntity creditRequest) {
-        CreditEvaluationEntity evaluation = creditEvaluationService.evaluateCredit(creditRequest);
-        return ResponseEntity.ok(evaluation);
-    }
+    public ResponseEntity<?> evaluateCredit(@RequestBody CreditRequestEntity creditRequest) {
+        try {
+            // Validar los datos de entrada
+            if (creditRequest == null || creditRequest.getEmail() == null || creditRequest.getRequestedAmount() == null) {
+                return ResponseEntity.badRequest().body("La solicitud de crédito es inválida. Por favor, revise los datos.");
+            }
 
+            // Ejecutar la evaluación de crédito
+            CreditEvaluationEntity evaluation = creditEvaluationService.evaluateCredit(creditRequest);
+
+            // Respuesta exitosa
+            return ResponseEntity.ok(evaluation);
+
+        } catch (IllegalArgumentException e) {
+            // Manejo de excepciones específicas
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            // Manejo de excepciones generales
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Ocurrió un error al evaluar el crédito: " + e.getMessage());
+        }
+    }
     /*
     @GetMapping("/{id}")
     public ResponseEntity<CreditEvaluationEntity> getEvaluation(@PathVariable Long id) {

@@ -3,7 +3,7 @@
     max-width: 600px;
     margin: 2px auto;
     padding: 1px 70px;
-    background-color: #4cc1ec;
+    background-color: #A09CB0;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgb(65, 168, 233);
   }
@@ -45,7 +45,7 @@
 .credit-simulation-button {
     width: 100%;
     padding: 10px;
-    background-color: #e00e0e;
+    background-color: #e74949;
     color: white;
     border: none;
     border-radius: 8px;
@@ -56,7 +56,7 @@
   }
   
 .credit-simulation-button:hover {
-    background-color: #45a049;
+    background-color: #5a0606;
   }
 
   .simulation-section {

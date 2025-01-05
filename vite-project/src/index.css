@@ -28,7 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: rgb(184, 143, 39);
+  background-color: #D57582;
 }
 
 header {
@@ -36,7 +36,7 @@ header {
   justify-content: space-between;
   align-items:first baseline;
   padding: 10px, 20px;
-  background-color: #b07a05;
+  background-color: #AA4465;
   width: 100%;
   position: fixed;
   top: 0;
@@ -47,7 +47,7 @@ header {
 h1 {
   font-size: 2em;
   line-height: 1.1;
-  font-family: 'Times New Roman', sans-serif; /* Cambia la tipografía a Arial */
+  font-family: 'Times New Roman', sans-serif;
   color: white; /* Color del texto del header */
   margin: 0; /* Elimina los márgenes por defecto */
 }

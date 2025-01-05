@@ -5,9 +5,9 @@
     max-width: 600px;
     margin: 2px auto;
     padding: 10px 80px;
-    background-color: #4cc1ec;
+    background-color: #8E4162;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgb(65, 168, 233);
+    box-shadow: 0 4px 8px #48162c;
 }
 
 /* Título del formulario */
@@ -48,17 +48,18 @@
 .credit-registration-button {
     width: 100%;
     padding: 12px;
-    background-color: #e81414;
+    background-color: #e14f4f;
     color: white;
     border: none;
     border-radius: 4px;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-bottom: 20px;
 }
 
 .credit-registration-button:hover {
-    background-color: #45a049;
+    background-color: #2e0101;
 }
 
 /* Mensaje de respuesta */

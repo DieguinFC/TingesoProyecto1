@@ -76,7 +76,7 @@ function CreditSimulation() {
           required
         />
 
-        <button type="submit" className="credit-simulation-button">Calcular Cuota Mensual(CHILE)</button>
+        <button type="submit" className="credit-simulation-button">Calcular Cuota Mensual</button>
       </form>
 
       {/* Mostrar el resultado si está disponible */}

@@ -1,0 +1,83 @@
+.evaluation-process-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    background-color: #861657;
+    margin-top: 100px;
+  }
+  
+  .evaluation-process-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .evaluation-form .form-group {
+    margin-bottom: 15px;
+    margin: auto;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+  
+  .evaluation-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .evaluation-form input[type="text"],
+  .evaluation-form input[type="number"],
+  .evaluation-form textarea,
+  .evaluation-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .evaluation-form .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .submit-button {
+    all: unset; /* Resetea todos los estilos heredados */
+    background-color: #6055B4;
+    color: white;
+    font-size: 18px; /* Ajusta el tamaño de la fuente dentro del botón */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100px;  /* Ancho específico */
+    height: 40px;  /* Altura específica */
+    text-align: center;
+  }
+  
+  
+  .submit-button:hover {
+    background-color: #16132A;
+  }
+  
+  .cancel-button {
+    all: unset; /* Resetea todos los estilos heredados */
+    background-color: #c12e2a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100px;  /* Ancho específico */
+    height: 40px;  /* Altura específica */
+    font-size: 20px;
+    text-align: center;
+
+
+  }
+  
+  .cancel-button:hover {
+    background-color: #5f0502;
+  }
+  
