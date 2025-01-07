@@ -18,7 +18,7 @@ function HomePage() {
   return (
     <div className="card">
       <p className="title">Selecciona una opción</p>
-      <button onClick={() => handleClick('/simulate')}>Simulación de Crédito</button>
+      <button className="button1" onClick={() => handleClick('/simulate')}>Simulación de Crédito</button>
       <button className="button2" onClick={() => handleClick('/register')}>
         Registrarse
       </button>
@@ -30,6 +30,7 @@ function HomePage() {
       </button>  
     </div>
   );
+  
 }
 
 function App() {

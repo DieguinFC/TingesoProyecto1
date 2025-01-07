@@ -1,7 +1,7 @@
 /* register.css */
 
 .register-container {
-    max-width: 600px;
+    max-width: 450px;
     margin: 2px auto;
     padding: 1px 70px;
     background-color: #8977d2;
@@ -25,7 +25,7 @@
   }
   
   .register-input {
-    width: 100%;
+    width: 70%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -36,7 +36,7 @@
   }
   
   .register-button {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     background-color: #e74949;
     color: white;
@@ -55,4 +55,35 @@
     text-align: center;
     color: red;
     margin-top: 20px;
+  }
+
+  .register-container h2 {
+    font-size: 2em;
+    color: #ffffff;
+  }
+
+  .register-text {
+    margin-top: 0px;
+    color: #ffffff;
+    font-size: 1.6em;
+  }
+
+  .register-back-button {
+    all : unset;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    background-color: #AA4465;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    margin-left: auto; /* Alinea el botón a la derecha */
+  }
+
+  .back-button:hover {
+    background-color: #22edd5;
   }

@@ -34,14 +34,16 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  align-items:first baseline;
-  padding: 10px, 20px;
+  align-items: baseline;
+  padding: 20px 30px;
   background-color: #AA4465;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   box-sizing: border-box;
+  font-size: 1.5em;
+  z-index: 1000; /* Asegura que el header esté por encima del contenido */
 }
 
 h1 {

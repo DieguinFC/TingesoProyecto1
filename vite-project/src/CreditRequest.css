@@ -1,38 +1,49 @@
-/* CreditRegistration.css */
+/* CreditRequest.css */
 
 /* Estilo para el contenedor principal */
-.credit-request-container {
-    max-width: 600px;
+.credit-request-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .credit-request-container {
+    max-width: 400px;
     margin: 2px auto;
     padding: 10px 80px;
     background-color: #8E4162;
     border-radius: 12px;
     box-shadow: 0 4px 8px #48162c;
-}
-
-/* Título del formulario */
-.credit-request-container h2 {
+    margin-top: 30px;
+    flex: 1;
+    margin-right: 20px;
+    margin-top: 70px;
+  }
+  
+  /* Título del formulario */
+  .credit-request-container h2 {
     text-align: center;
-    color: #f7f7f7;
+    color: #ffffff;
     margin-bottom: 30px;
-}
-
-
-/* Estilos para cada grupo de campos */
-.credit-request-group {
+    font-size: 1.7em;
+  }
+  
+  /* Estilos para cada grupo de campos */
+  .credit-request-group {
     margin-bottom: 10px;
-}
-
-/* Etiquetas de cada campo */
-.credit-field-group label {
+  }
+  
+  /* Etiquetas de cada campo */
+  .credit-field-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #555;
-}
-
-/* Inputs y select del formulario */
-.credit-request-input {
+    color: #ffffff;
+  }
+  
+  /* Inputs y select del formulario */
+  .credit-request-input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -43,9 +54,9 @@
     box-sizing: border-box;
     font-size: 1em;
   }
-
-/* Estilo para el botón de envío */
-.credit-registration-button {
+  
+  /* Estilo para el botón de envío */
+  .credit-registration-button {
     width: 100%;
     padding: 12px;
     background-color: #e14f4f;
@@ -55,17 +66,62 @@
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s;
-    border-bottom: 20px;
-}
-
-.credit-registration-button:hover {
+    margin-bottom: 20px;
+  }
+  
+  .credit-registration-button:hover {
     background-color: #2e0101;
-}
-
-/* Mensaje de respuesta */
-.credit-registration-message {
-    margin-top: 15px;
+  }
+  
+  /* Mensaje de respuesta */
+  .credit-registration-message {
+    margin-top: 10px;
     text-align: center;
-    font-size: 1.1em;
-    color: #333;
-}
+    font-size: 1.3em;
+    color: #ffffff;
+  }
+  
+  .back-button-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .credit-register-back-button {
+    all: unset;
+    padding: 10px 20px;
+    background-color: #AA4465;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline-block;
+  }
+  
+  /* Estilo para la caja de información */
+  .credit-request-info {
+    padding: 20px;
+    background-color: #8E4162;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    flex: 0.5;
+    box-shadow: 0 4px 8px #48162c;
+    margin-top: 70px;
+    max-width: 400px;
+  }
+  
+  .credit-request-info h3 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  
+  .credit-request-info p {
+    font-size: 1.3em;
+    color: #ffffff;
+    white-space: pre-line;
+     /* Para mantener los saltos de línea en el contenido */
+  }

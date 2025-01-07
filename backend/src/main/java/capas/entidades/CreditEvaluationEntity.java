@@ -17,9 +17,8 @@ public class CreditEvaluationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "credit_request_id", nullable = false)
-    private CreditRequestEntity creditRequest; // Referencia a la solicitud de crédito asociada.
+    @Column(name = "credit_request_id", nullable = false)
+    private Long creditRequestId; // Almacenar solo el ID de la solicitud de crédito.
 
     // R1: Relación cuota/ingreso
     @Column(nullable = false)

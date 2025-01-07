@@ -13,13 +13,60 @@ function CreditRegistration() {
   const [files, setFiles] = useState(null); // Estado para manejar archivos
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
+  const [infoContent, setInfoContent] = useState('Seleccione un tipo de crédito para ver más información.');
 
   const creditTypes = [
-    { id: 1, name: 'Primera Vivienda' },
-    { id: 2, name: 'Segunda Vivienda' },
-    { id: 3, name: 'Renovación' },
-    { id: 4, name: 'Otro' },
+    { id: 1, name: 'Primera Vivienda', info: `
+Primera Vivienda.
+Plazo máximo: 30 años
+Tasa de interés anual: 3,5% - 5%
+Monto financiamento máximo: 
+80% el valor de la propiedad
+Requisitos Documentales:
+- Comprobante de ingresos
+- Certificado de avalúo
+- Historial crediticio
+    ` },
+    { id: 2, name: 'Segunda Vivienda', info: `
+Segunda Vivienda.
+Plazo máximo: 20 años
+Tasa de interés anual: 4% - 6%
+Monto financiamento máximo: 
+70% el valor de la propiedad
+Requisitos Documentales:
+- Comprobante de ingresos
+- Certificado de avalúo
+- Escritura de la primera vivienda
+- Historial crediticio
+    ` },
+    { id: 3, name: 'Renovación', info: `
+Renovación.
+Plazo máximo: 25 años
+Tasa de interés anual: 5% - 7%
+Monto financiamento máximo: 
+60% el valor de la propiedad
+Requisitos Documentales:
+- Estado financiero del negocio
+- Comprobante de ingresos
+- Certificado de avalúo
+- Plan de negocios
+    ` },
+    { id: 4, name: 'Otro', info: `
+Otros.
+Plazo máximo: 15 años
+Tasa de interés anual: 4.5% - 6%
+Monto financiamento máximo: 
+50% el valor de la propiedad
+Requisitos Documentales:
+- Comprobante de ingresos
+- Presupuesto de la remodelación
+- Certificado de avalúo actualizado
+    ` },
   ];
+
+  const formatNumber = (number) => {
+    return number.toLocaleString('es-ES');
+  };
 
   const validateForm = () => {
     const errors = {};
@@ -31,7 +78,7 @@ function CreditRegistration() {
       errors.email = 'El correo electrónico no es válido.';
     }
 
-    if (!loanAmount || Number(loanAmount) <= 0) {
+    if (!loanAmount || Number(loanAmount.replace(/\./g, '')) <= 0) {
       errors.loanAmount = 'El monto del préstamo debe ser mayor a 0.';
     }
 
@@ -55,6 +102,19 @@ function CreditRegistration() {
     setFiles(e.target.files); // Manejar múltiples archivos si es necesario
   };
 
+  const handleLoanAmountChange = (e) => {
+    const value = e.target.value.replace(/\D/g, ''); // Elimina todos los caracteres no numéricos
+    setLoanAmount(value ? formatNumber(Number(value)) : '');
+  };
+
+  const handleCreditTypeChange = (e) => {
+    const selectedCreditTypeId = e.target.value;
+    setCreditTypeId(selectedCreditTypeId);
+
+    const selectedCreditType = creditTypes.find(type => type.id === parseInt(selectedCreditTypeId));
+    setInfoContent(selectedCreditType ? selectedCreditType.info : 'Seleccione un tipo de crédito para ver más información.');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -66,7 +126,7 @@ function CreditRegistration() {
     
     const creditRequest = {
       email: email,
-      requestedAmount: loanAmount,
+      requestedAmount: parseFloat(loanAmount.replace(/\./g, '')),
       termInYears: term,
       creditTypeId: creditTypeId,
       status: 'Pendiente', // o el estado que quieras
@@ -101,82 +161,96 @@ function CreditRegistration() {
     }
   };
 
+  const handleBack = () => {
+    // Lógica para volver a la página anterior
+    window.history.back();
+  };
+
   return (
-    <div className="credit-request-container">
-      <h2>Registro y Solicitud de Crédito</h2>
-      <form onSubmit={handleSubmit}>
-        {/* Campos existentes */}
-        <div className="credit-request-group">
-          <input
-            className="credit-request-input"
-            type="email"
-            placeholder="Correo electrónico"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          {errors.email && <p className="error-message">{errors.email}</p>}
-        </div>
+    <div className="credit-request-wrapper">
+      <div className="credit-request-container">
+        <h2>Registro y Solicitud de Crédito</h2>
+        <form onSubmit={handleSubmit}>
+          {/* Campos existentes */}
+          <div className="credit-request-group">
+            <input
+              className="credit-request-input"
+              type="email"
+              placeholder="Correo electrónico"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            {errors.email && <p className="error-message">{errors.email}</p>}
+          </div>
 
-        <div className="credit-request-group">
-          <input
-            className="credit-request-input"
-            type="number"
-            placeholder="Monto del préstamo"
-            value={loanAmount}
-            onChange={(e) => setLoanAmount(e.target.value)}
-            required
-          />
-          {errors.loanAmount && <p className="error-message">{errors.loanAmount}</p>}
-        </div>
+          <div className="credit-request-group">
+            <input
+              className="credit-request-input"
+              type="text"
+              placeholder="Monto del préstamo"
+              value={loanAmount}
+              onChange={handleLoanAmountChange}
+              required
+            />
+            {errors.loanAmount && <p className="error-message">{errors.loanAmount}</p>}
+          </div>
 
-        <div className="credit-request-group">
-          <input
-            className="credit-request-input"
-            type="number"
-            placeholder="Plazo en años"
-            value={term}
-            onChange={(e) => setTerm(e.target.value)}
-            required
-          />
-          {errors.term && <p className="error-message">{errors.term}</p>}
-        </div>
+          <div className="credit-request-group">
+            <input
+              className="credit-request-input"
+              type="number"
+              placeholder="Plazo en años"
+              value={term}
+              onChange={(e) => setTerm(e.target.value)}
+              required
+            />
+            {errors.term && <p className="error-message">{errors.term}</p>}
+          </div>
 
-        <div className="credit-request-group">
-          <select
-            className="credit-request-input"
-            value={creditTypeId}
-            onChange={(e) => setCreditTypeId(e.target.value)}
-            required
-          >
-            <option value="">Seleccione un tipo de crédito</option>
-            {creditTypes.map((type) => (
-              <option key={type.id} value={type.id}>
-                {type.name}
-              </option>
-            ))}
-          </select>
-          {errors.creditTypeId && <p className="error-message">{errors.creditTypeId}</p>}
-        </div>
+          <div className="credit-request-group">
+            <select
+              className="credit-request-input"
+              value={creditTypeId}
+              onChange={handleCreditTypeChange}
+              required
+            >
+              <option value="">Seleccione un tipo de crédito</option>
+              {creditTypes.map((type) => (
+                <option key={type.id} value={type.id}>
+                  {type.name}
+                </option>
+              ))}
+            </select>
+            {errors.creditTypeId && <p className="error-message">{errors.creditTypeId}</p>}
+          </div>
 
-        {/* Campo para subir archivos */}
-        <div className="credit-request-group">
-          <input
-            className="credit-request-input"
-            type="file"
-            onChange={handleFileChange}
-            multiple
-            accept="application/pdf"
-          />
-          {errors.files && <p className="error-message">{errors.files}</p>}
-        </div>
+          {/* Campo para subir archivos */}
+          <div className="credit-request-group">
+            <input
+              className="credit-request-input"
+              type="file"
+              onChange={handleFileChange}
+              multiple
+              accept="application/pdf"
+            />
+            {errors.files && <p className="error-message">{errors.files}</p>}
+          </div>
 
-        <button className="credit-registration-button" type="submit">
-          Registrar y Solicitar Crédito
-        </button>
-      </form>
+          <button className="credit-registration-button" type="submit">
+            Registrar y Solicitar Crédito
+          </button>
+        </form>
 
-      {message && <p className="credit-registration-message">{message}</p>}
+        {message && <p className="credit-registration-message">{message}</p>}
+      </div>
+      <div className="credit-request-info">
+        <h3>Información sobre los tipos de credito</h3>
+        <p>{infoContent}</p>
+      </div>
+      <div className="back-button-container">
+        <button onClick={handleBack} className="credit-register-back-button">Volver</button>
+      </div>
     </div>
   );
 }

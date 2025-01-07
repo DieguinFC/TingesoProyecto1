@@ -1,57 +1,91 @@
 :root {
-    --table-bg-color: #32021F; /* Color de fondo predeterminado de la tabla */
-    --text-color: rgb(213, 213, 213); /* Color de letra predeterminado */
-  }
-  
-  .credit-requests-container {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .credit-requests-table {
-    margin: 20px auto;
-    border-collapse: collapse;
-    width: 95%;
-    background-color: var(--table-bg-color); /* Aplica el color de fondo */
-    color: var(--text-color); /* Aplica el color de letra */
-  }
-  
-  .credit-requests-table th,
-  .credit-requests-table td {
-    border: 1px solid #ffffff;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .credit-requests-table th {
-    background-color: var(--table-bg-color); /* Color de fondo de encabezado */
-    color: var(--text-color); /* Color de texto del encabezado */
-  }
-  
-  .error-message {
-    color: red;
-  }
-  .evaluate-button {
-    background-color: #FE5F55; /* Color de fondo */
-    color: rgb(255, 255, 255); /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 8px 16px; /* Espaciado interno */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    font-size: 1rem; /* Tamaño de la fuente */
-    transition: background-color 0.3s ease; /* Transición suave */
-  }
-  
-  .evaluate-button:hover {
-    background-color: #15c93c; /* Color de fondo al pasar el mouse */
-  }
-  
-  .evaluate-button:active {
-    background-color: #a1140d; /* Color de fondo al hacer clic */
-  }
-  
-  .evaluate-button:disabled {
-    background-color: #ccc; /* Color del botón deshabilitado */
-    cursor: not-allowed; /* Cursor no permitido */
-  }
-  
+  --table-bg-color: #32021F; /* Color de fondo predeterminado de la tabla */
+  --text-color: rgb(213, 213, 213); /* Color de letra predeterminado */
+  --header-bg-color: #4A0E3B; /* Color de fondo del encabezado */
+  --header-text-color: #ffffff; /* Color de texto del encabezado */
+}
+
+.credit-requests-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.credit-requests-container h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 2.5em; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+}
+
+.credit-requests-table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 95%;
+  background-color: var(--table-bg-color); /* Aplica el color de fondo */
+  color: var(--text-color); /* Aplica el color de letra */
+}
+
+.credit-requests-table th,
+.credit-requests-table td {
+  border: 1px solid #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+.credit-requests-table th {
+  background-color: var(--header-bg-color); /* Color de fondo de encabezado */
+  color: var(--header-text-color); /* Color de texto del encabezado */
+}
+
+.credit-requests-table tr:first-child {
+  font-size: 1.2em; /* Tamaño de fuente más grande para la primera fila */
+}
+
+.error-message {
+  color: red;
+}
+
+.evaluate-button {
+  background-color: #FE5F55; /* Color de fondo */
+  color: rgb(255, 255, 255); /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 8px 16px; /* Espaciado interno */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  font-size: 1rem; /* Tamaño de la fuente */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.evaluate-button:hover {
+  background-color: #15c93c; /* Color de fondo al pasar el mouse */
+}
+
+.evaluate-button:active {
+  background-color: #a1140d; /* Color de fondo al hacer clic */
+}
+
+.evaluate-button:disabled {
+  background-color: #ccc; /* Color del botón deshabilitado */
+  cursor: not-allowed; /* Cursor no permitido */
+}
+
+.back-button {
+  all: unset;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 10px 20px;
+  background-color: #AA4465;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  margin-left: 680px; /* Alinea el botón a la derecha */
+}
+
+.back-button:hover {
+  background-color: #00789c;
+}

@@ -37,28 +37,26 @@ public class CreditEvaluationController {
 
     // Método para evaluar un crédito basado en una solicitud
     @PostMapping("/evaluate")
-    public ResponseEntity<?> evaluateCredit(@RequestBody CreditRequestEntity creditRequest) {
+    public ResponseEntity<?> evaluateCredit(@RequestBody CreditEvaluationEntity creditEvaluation) {
         try {
-            // Validar los datos de entrada
-            if (creditRequest == null || creditRequest.getEmail() == null || creditRequest.getRequestedAmount() == null) {
-                return ResponseEntity.badRequest().body("La solicitud de crédito es inválida. Por favor, revise los datos.");
-            }
+            // Validar que los campos obligatorios no sean nulos
+            creditEvaluationService.validateCreditEvaluation(creditEvaluation);
 
             // Ejecutar la evaluación de crédito
-            CreditEvaluationEntity evaluation = creditEvaluationService.evaluateCredit(creditRequest);
+            CreditEvaluationEntity evaluation = creditEvaluationService.evaluateCredit(creditEvaluation);
 
             // Respuesta exitosa
             return ResponseEntity.ok(evaluation);
-
         } catch (IllegalArgumentException e) {
             // Manejo de excepciones específicas
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             // Manejo de excepciones generales
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Ocurrió un error al evaluar el crédito: " + e.getMessage());
         }
     }
+
     /*
     @GetMapping("/{id}")
     public ResponseEntity<CreditEvaluationEntity> getEvaluation(@PathVariable Long id) {

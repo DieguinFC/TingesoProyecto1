@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './EvaluationProcess.css'; // Opcional: estilos personalizados
 
 function EvaluationProcess() {
+  const { id } = useParams(); // Captura el requestId de la URL
+
   const [formData, setFormData] = useState({
-    QuotaIncomeRatio: '',
-    CreditHistory: '',
-    EmploymentStability: '',
-    DebtIncomeRatio: '',
-    SavingsRequirements: '',
-    status: 'Pendiente',
-    comments: '',
+    creditRequestId: parseInt(id, 10) || '', // Convertir id a número
+    quotaIncomeRatio: '',
+    maxAllowedQuotaIncomeRatio: '',
+    creditHistoryStatus: '',
+    creditHistoryComments: '',
     employmentYears: '',
     employmentType: '',
+    debtIncomeRatio: '',
+    maxAllowedDebtIncomeRatio: '',
+    requestedAmount: '',
+    propertyValue: '',
+    maxfinancingPercentage: '',
     applicantAge: '',
     maxAgeAllowedAtLoanEnd: '',
     savingsBalance: '',
     minSavingsRequired: '',
     savingsConsistency: '',
     savingsComments: '',
+    evaluationResult: 'Pendiente',
+    evaluationComments: '',
   });
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,17 +37,74 @@ function EvaluationProcess() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Datos enviados:', formData);
-    // Aquí puedes enviar los datos al backend con axios u otro método
+  const prepareFormData = () => {
+    return {
+      creditRequestId: formData.creditRequestId || '', // Usamos el valor convertido
+      quotaIncomeRatio: formData.quotaIncomeRatio ? parseFloat(formData.quotaIncomeRatio) : 0,
+      maxAllowedQuotaIncomeRatio: formData.maxAllowedQuotaIncomeRatio ? parseFloat(formData.maxAllowedQuotaIncomeRatio) : 0,
+      creditHistoryStatus: formData.creditHistoryStatus || '',
+      creditHistoryComments: formData.creditHistoryComments || '',
+      employmentYears: formData.employmentYears ? parseInt(formData.employmentYears) : 0,
+      employmentType: formData.employmentType || '',
+      debtIncomeRatio: formData.debtIncomeRatio ? parseFloat(formData.debtIncomeRatio) : 0,
+      maxAllowedDebtIncomeRatio: formData.maxAllowedDebtIncomeRatio ? parseFloat(formData.maxAllowedDebtIncomeRatio) : 0,
+      requestedAmount: formData.requestedAmount ? parseFloat(formData.requestedAmount) : 0,
+      propertyValue: formData.propertyValue ? parseFloat(formData.propertyValue) : 0,
+      maxFinancingPercentage: formData.maxfinancingPercentage ? parseFloat(formData.maxfinancingPercentage) : 0,
+      applicantAge: formData.applicantAge ? parseInt(formData.applicantAge) : 0,
+      maxAgeAllowedAtLoanEnd: formData.maxAgeAllowedAtLoanEnd ? parseInt(formData.maxAgeAllowedAtLoanEnd) : 0,
+      savingsBalance: formData.savingsBalance ? parseFloat(formData.savingsBalance) : 0,
+      minSavingsRequired: formData.minSavingsRequired ? parseFloat(formData.minSavingsRequired) : 0,
+      savingsConsistency: formData.savingsConsistency || '',
+      savingsComments: formData.savingsComments || '',
+      evaluationResult: formData.evaluationResult || 'Pendiente',
+      evaluationComments: formData.evaluationComments || '',
+    };
+  };
+  
+  
+  const handleSubmit = async () => {
+    const dataToSend = prepareFormData();
+    console.log("ID capturado desde la URL:", id);
+    console.log("Datos a enviar:", dataToSend);
+  
+    try {
+      const response = await fetch("/api/credit-evaluation/evaluate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToSend),
+      });
+  
+      if (response.ok) {
+        const evaluation = await response.json();
+        console.log("Evaluación exitosa:", evaluation);
+        alert("Formulario enviado y evaluación completada con éxito.");
+        window.history.back(); // Volver a la página anterior
+      } else {
+        const errorMessage = await response.text();
+        console.error("Error en la evaluación:", errorMessage);
+        alert(`Error: ${errorMessage}`);
+      }
+    } catch (error) {
+      console.error("Error al enviar la solicitud:", error);
+      alert("Ocurrió un error inesperado al enviar la solicitud.");
+    }
   };
 
+  
   const handleCancel = () => {
-    console.log('Evaluación cancelada.');
-    // Redirigir o limpiar formulario si es necesario
+    const userConfirmed = window.confirm("¿Estás seguro de que deseas cancelar? Los cambios no guardados se perderán.");
+    if (userConfirmed) {
+      console.log("Evaluación cancelada.");
+      window.history.back(); // Redirigir a la página anterior
+    } else {
+      console.log("Cancelación abortada por el usuario.");
+    }
   };
-
+  
+  
   return (
     <div className="evaluation-process-container">
       <h2>Evaluación de Crédito</h2>
@@ -48,10 +114,24 @@ function EvaluationProcess() {
             Relación cuota/ingreso:
             <input
               type="number"
-              name="QuotaIncomeRatio"
-              value={formData.QuotaIncomeRatio}
+              name="quotaIncomeRatio"
+              value={formData.quotaIncomeRatio}
               onChange={handleChange}
               placeholder="Ejemplo: 0.3"
+              required
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label>
+            Relacion maxima cuota/ingreso:
+            <input
+              type="number"
+              name="maxAllowedQuotaIncomeRatio"
+              value={formData.maxAllowedQuotaIncomeRatio}
+              onChange={handleChange}
+              placeholder="Ejemplo: 0.5"
+              required
             />
           </label>
         </div>
@@ -59,9 +139,10 @@ function EvaluationProcess() {
           <label>
             Estado de Historial crediticio:
             <select
-              name="status"
-              value={formData.status}
+              name="creditHistoryStatus"
+              value={formData.creditHistoryStatus}
               onChange={handleChange}
+              required
             >
               <option value="">Seleccionar estado</option>
               <option value="Bueno">Bueno</option>
@@ -72,13 +153,14 @@ function EvaluationProcess() {
         </div>
         <div className="form-group">
           <label>
-            Historial crediticio:
+            Detalles del Historial crediticio:
             <textarea
               type="text"
-              name="hasGoodCreditHistory"
-              value={formData.CreditHistory}
+              name="creditHistoryComments"
+              value={formData.creditHistoryComments}
               onChange={handleChange}
               placeholder="Detalle del historial crediticio"
+              required
             />
           </label>
         </div>
@@ -87,23 +169,30 @@ function EvaluationProcess() {
             Años de antiguedad en empleo actual:
             <input
               type="number"
-              name="meetsEmploymentStability"
-              value={formData.EmploymentStability}
+              name="employmentYears"
+              value={formData.employmentYears}
               onChange={handleChange}
               placeholder="Ejemplo: 2"
+              required
             />
           </label>
         </div>
         <div className="form-group">
           <label>
             Tipo de empleo:
-            <input
+            <select
               type="text"
               name="employmentType"
               value={formData.employmentType}
               onChange={handleChange}
               placeholder="Ejemplo: Fijo, temporal, independiente"
-            />
+              required
+              >
+              <option value="">Elija una opción</option>
+              <option value="Fijo">Fijo</option>
+              <option value="Temporal">Temporal</option>
+              <option value="Independiente">Independiente</option>
+            </select>
           </label>
         </div>
         <div className="form-group">
@@ -111,10 +200,24 @@ function EvaluationProcess() {
             Relación deuda/ingreso:
             <input
               type="number"
-              name="meetsDebtIncomeRatio"
-              value={formData.DebtIncomeRatio}
+              name="debtIncomeRatio"
+              value={formData.debtIncomeRatio}
               onChange={handleChange}
               placeholder="Ejemplo: 0.5"
+              required
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label>
+            Relación deuda/ingreso Maxima permitida:
+            <input
+              type="number"
+              name="maxAllowedDebtIncomeRatio"
+              value={formData.maxAllowedDebtIncomeRatio}
+              onChange={handleChange}
+              placeholder="Ejemplo: 0.6"
+              required
             />
           </label>
         </div>
@@ -122,11 +225,38 @@ function EvaluationProcess() {
           <label>
             Monto solicitado por el cliente:
             <input
-              type="text"
-              name="meetsSavingsRequirements"
-              value={formData.SavingsRequirements}
+              type="number"
+              name="requestedAmount"
+              value={formData.requestedAmount}
               onChange={handleChange}
-              placeholder="Ejemplo: $100000"
+              placeholder="Ejemplo: $10000000"
+              required
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label>
+            Costo de la propiedad:
+            <input
+              type="number"
+              name="propertyValue"
+              value={formData.propertyValue}
+              onChange={handleChange}
+              placeholder="Ejemplo: $1000000000"
+              required
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label>
+            Maximo porcentaje de financiamiento:
+            <input
+              type="number"
+              name="maxfinancingPercentage"
+              value={formData.maxfinancingPercentage}
+              onChange={handleChange}
+              placeholder="Ejemplo: 0.8"
+              required
             />
           </label>
         </div>
@@ -138,6 +268,8 @@ function EvaluationProcess() {
               name="applicantAge"
               value={formData.applicantAge}
               onChange={handleChange}
+              placeholder="Ejemplo: 30"
+              required
             />
           </label>
         </div>
@@ -149,17 +281,21 @@ function EvaluationProcess() {
               name="maxAgeAllowedAtLoanEnd"
               value={formData.maxAgeAllowedAtLoanEnd}
               onChange={handleChange}
+              placeholder="Ejemplo: 75"
+              required
             />
           </label>
         </div>
         <div className="form-group">
           <label>
-            Saldo de ahorros:
+            Saldo actual de ahorros:
             <input
               type="number"
               name="savingsBalance"
               value={formData.savingsBalance}
               onChange={handleChange}
+              placeholder="Ejemplo: $10000000"
+              required
             />
           </label>
         </div>
@@ -171,18 +307,27 @@ function EvaluationProcess() {
               name="minSavingsRequired"
               value={formData.minSavingsRequired}
               onChange={handleChange}
+              placeholder="Ejemplo: $8000000"
+              required
             />
           </label>
         </div>
         <div className="form-group">
           <label>
             Consistencia de ahorros:
-            <input
+            <select
               type="text"
               name="savingsConsistency"
               value={formData.savingsConsistency}
               onChange={handleChange}
-            />
+              placeholder="Ejemplo: Consistente, intermitente, irregular"
+              required
+              >
+              <option value="">Elija una opción</option>
+              <option value="Consistente">Consistente</option>
+              <option value="Intermitente">Intermitente</option>
+              <option value="Irregular">Irregular</option>
+            </select>
           </label>
         </div>
         <div className="form-group">
@@ -193,6 +338,7 @@ function EvaluationProcess() {
               value={formData.savingsComments}
               onChange={handleChange}
               placeholder="Escribe comentarios sobre los ahorros..."
+              required
             />
           </label>
         </div>
@@ -202,9 +348,10 @@ function EvaluationProcess() {
           <label>
             Estado:
             <select
-              name="status"
-              value={formData.status}
+              name="evaluationResult"
+              value={formData.evaluationResult}
               onChange={handleChange}
+              required
             >
               <option value="Pendiente">Pendiente</option>
               <option value="Aprobado">Aprobado</option>
@@ -216,16 +363,23 @@ function EvaluationProcess() {
           <label>
             Comentarios adicionales:
             <textarea
-              name="comments"
-              value={formData.comments}
+              name="evaluationComments"
+              value={formData.evaluationComments}
               onChange={handleChange}
               placeholder="Escribe comentarios adicionales..."
+              required
             />
           </label>
         </div>
 
         <div className="form-buttons">
-          <button type="submit" className="submit-button">Guardar</button>
+          <button
+            type="submit"
+            className="submit-button"
+          >
+            Guardar
+          </button>
+
           <button
             type="button"
             className="cancel-button"

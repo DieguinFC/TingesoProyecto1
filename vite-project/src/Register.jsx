@@ -9,6 +9,10 @@ function Register() {
   const [income, setIncome] = useState('');
   const [message, setMessage] = useState('');
 
+  const formatNumber = (number) => {
+    return number.toLocaleString('es-ES');
+  };
+
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
@@ -16,7 +20,7 @@ function Register() {
         name,
         email,
         password,
-        income,
+        income: parseFloat(income.replace(/\./g, '')), // Elimina los puntos antes de enviar
       });
       setMessage("Registro exitoso. ¡Bienvenido!");
     } catch (error) {
@@ -28,43 +32,56 @@ function Register() {
     }
   };
 
+  const handleIncomeChange = (e) => {
+    const value = e.target.value.replace(/\D/g, ''); // Elimina todos los caracteres no numéricos
+    setIncome(value ? formatNumber(Number(value)) : '');
+  };
+
+  const handleBack = () => {
+    // Lógica para volver a la página anterior
+    window.history.back();
+  };
+
   return (
-    <div className = "register-container">
-      <h2>Registro de Usuario</h2>
-      <form onSubmit={handleRegister}>
-        <input
-          className='register-input'
-          type="text"
-          placeholder="Nombre"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          className='register-input'
-          type="email"
-          placeholder="Correo Electrónico"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input className='register-input'
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <input className='register-input'
-          type="number"
-          placeholder="Ingreso Mensual"
-          value={income}
-          onChange={(e) => setIncome(e.target.value)}
-          required
-        />
-        <button className='register-button' type="submit">Registrarse</button>
-      </form>
-      {message && <p className='register-text'>{message}</p>}
+    <div>
+      <div className="register-container">
+        <h2>Registro de Usuario</h2>
+        <form onSubmit={handleRegister}>
+          <input
+            className='register-input'
+            type="text"
+            placeholder="Nombre"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <input
+            className='register-input'
+            type="email"
+            placeholder="Correo Electrónico"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input className='register-input'
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <input className='register-input'
+            type="text"
+            placeholder="Ingreso Mensual"
+            value={income}
+            onChange={handleIncomeChange}
+            required
+          />
+          <button className='register-button' type="submit">Registrarse</button>
+        </form>
+        {message && <p className='register-text'>{message}</p>}
+      </div>
+      <button onClick={handleBack} className="register-back-button">Volver</button>
     </div>
   );
 }

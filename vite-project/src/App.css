@@ -22,21 +22,6 @@
   }
 }
 
-/* Header Styles */
-header {
-  display: flex;
-  justify-content: center;
-  padding: 20px 30px;
-  background-color: #DEBA6F;
-  color: white;
-  font-size: 1.5em;
-}
-
-header h1 {
-  font-size: 2.5em;
-  color: white;
-}
-
 /* Card Container */
 .card {
   padding: 2em;
@@ -46,7 +31,7 @@ header h1 {
   font-size: 20px;
 }
 .title {
-  font-size: 30px; /* Ajusta el tamaño de la fuente aquí */
+  font-size: 2em; /* Ajusta el tamaño de la fuente aquí */
   font-weight: bold; /* Puedes agregar otras propiedades como el peso de la fuente */
   color: #ffffff; /* También puedes cambiar el color si lo deseas */
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -56,9 +41,9 @@ header h1 {
 /* Simulation Section Styles */
 
 /* Button Styles */
-button {
-  padding: 10px 40px;
-  font-size: 20px;
+.button1 {
+  padding: 20px 40px;
+  font-size: 1.5em;
   background-color: #CE4257;
   color: rgb(253, 253, 253);
   border: none;
@@ -72,37 +57,43 @@ button {
 .button2 {
   background-color: #AE4C8A; /* Cambia el color de fondo */
   color: rgb(255, 255, 255); /* Color del texto */
-  padding: 10px 40px;
+  padding: 20px 40px;
   border: none;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.5em;
   margin-top: 10px;
   display: block; /* Asegura que el botón ocupe toda la línea */
   width: 100%; /* Asegura que el botón ocupe todo el ancho */
+  border-radius: 12px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .button3 {
   background-color: #9767CB; /* Cambia el color de fondo */
   color: rgb(255, 255, 255); /* Color del texto */
-  padding: 10px 40px;
+  padding: 20px 40px;
   border: none;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.5em;
   margin-top: 10px;
   display: block; /* Asegura que el botón ocupe toda la línea */
   width: 100%; /* Asegura que el botón ocupe todo el ancho */
+  border-radius: 12px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .button4 {
   background-color: #867ABB; /* Cambia el color de fondo */
   color: rgb(255, 255, 255); /* Color del texto */
-  padding: 10px 40px;
+  padding: 20px 40px;
   border: none;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.5em;
   margin-top: 10px;
   display: block; /* Asegura que el botón ocupe toda la línea */
   width: 100%; /* Asegura que el botón ocupe todo el ancho */
+  border-radius: 12px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 button:hover {
@@ -112,4 +103,9 @@ button:hover {
 /* Read-the-Docs Text */
 .read-the-docs {
   color: #888;
+}
+
+.main-content {
+  margin-top: 80px; /* Ajusta este valor según la altura total del header */
+  padding: 20px;
 }

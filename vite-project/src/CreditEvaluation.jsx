@@ -35,6 +35,14 @@ function CreditEvaluation() {
     navigate(`/credit-evaluation/evaluation/${requestId}`);
   };
 
+  const handleBack = () => {
+    navigate(-1); // Navega a la página anterior
+  };
+
+  const formatNumber = (number) => {
+    return number.toLocaleString('es-ES');
+  };
+
   return (
     <div className="credit-requests-container">
       <h2>Solicitudes de Crédito</h2>
@@ -58,7 +66,7 @@ function CreditEvaluation() {
             {creditRequests.map((request) => (
               <tr key={request.id}>
                 <td>{request.email}</td>
-                <td>{request.requestedAmount}</td>
+                <td>{formatNumber(request.requestedAmount)}</td>
                 <td>{request.termInYears}</td>
                 <td>
                   {
@@ -67,7 +75,7 @@ function CreditEvaluation() {
                 </td>
                 <td>{request.status}</td>
                 <td>
-                  {request.status !== 'Aceptada' && request.status !== 'Rechazada' && (
+                  {request.status !== 'Aprobado' && request.status !== 'Rechazado' && (
                     <button
                       className="evaluate-button"
                       onClick={() => handleEvaluate(request.id)}
@@ -81,6 +89,9 @@ function CreditEvaluation() {
           </tbody>
         </table>
       )}
+      <div className="back-button-container">
+        <button onClick={handleBack} className="back-button">Volver</button>
+      </div>
     </div>
   );
 }
