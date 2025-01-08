@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import CustomPDFViewer from './CustomPDFViewer'; // Import the custom PDF viewer
 import './EvaluationProcess.css'; // Opcional: estilos personalizados
 
 function EvaluationProcess() {
@@ -27,6 +28,31 @@ function EvaluationProcess() {
     evaluationResult: 'Pendiente',
     evaluationComments: '',
   });
+
+  const [pdfUrl, setPdfUrl] = useState(''); // Estado para almacenar la URL del PDF
+  const [files, setFiles] = useState([]); // Estado para almacenar los nombres de los archivos
+  const [error, setError] = useState(''); // Estado para manejar errores
+
+  useEffect(() => {
+    // Obtener los nombres de los archivos asociados a la solicitud de crédito
+    const fetchCreditRequest = async () => {
+      try {
+        const response = await fetch(`/api/credits/credit-request/${id}`);
+        if (response.ok) {
+          const creditRequest = await response.json();
+          console.log('Respuesta del servidor:', creditRequest); // Log para verificar la respuesta
+          setFiles(creditRequest.files || []); // Asegúrate de que files sea una lista
+        } else {
+          setError('Error al obtener la solicitud de crédito');
+        }
+      } catch (error) {
+        setError('Error al obtener la solicitud de crédito');
+        console.error('Error al obtener la solicitud de crédito:', error);
+      }
+    };
+
+    fetchCreditRequest();
+  }, [id]);
   
 
   const handleChange = (e) => {
@@ -102,6 +128,14 @@ function EvaluationProcess() {
     } else {
       console.log("Cancelación abortada por el usuario.");
     }
+  };
+
+  const handleFileClick = (filePath) => {
+    const fileName = filePath.split('/').pop(); // Extract the file name from the full path
+    const encodedFileName = encodeURIComponent(fileName);
+    console.log("Original file path:", filePath);
+    console.log("Encoded file name:", encodedFileName);
+    setPdfUrl(`/api/credits/files/${encodedFileName}`);
   };
   
   
@@ -389,7 +423,28 @@ function EvaluationProcess() {
           </button>
         </div>
       </form>
+      {/* Display the file names and allow downloading */}
+      <div className="file-list">
+        <h3>Archivos adjuntos</h3>
+        <ul>
+          {files.map((filePath) => (
+            <li key={filePath}>
+              <button onClick={() => handleFileClick(filePath)}>
+                {filePath.split('/').pop()}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Custom PDFViewer component to display the PDF */}
+      {pdfUrl && (
+        <>
+          <CustomPDFViewer fileUrl={pdfUrl} />
+        </>
+      )}
     </div>
+    
   );
 }
 

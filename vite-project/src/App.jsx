@@ -5,7 +5,6 @@ import CreditSimulation from './CreditSimulation.jsx';
 import Register from './Register.jsx'; 
 import CreditRequest from './CreditRequest.jsx'; // Importa el componente de solicitud de crédito
 import CreditEvaluation from './CreditEvaluation.jsx'; // Importa el componente de evaluación de crédito
-import Evaluation from './EvaluationProcess.jsx';
 import EvaluationProcess from './EvaluationProcess.jsx';
 
 function HomePage() {

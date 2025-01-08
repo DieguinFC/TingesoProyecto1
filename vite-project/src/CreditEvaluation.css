@@ -1,6 +1,6 @@
 :root {
   --table-bg-color: #32021F; /* Color de fondo predeterminado de la tabla */
-  --text-color: rgb(213, 213, 213); /* Color de letra predeterminado */
+  --text-color: rgb(250, 250, 250); /* Color de letra predeterminado */
   --header-bg-color: #4A0E3B; /* Color de fondo del encabezado */
   --header-text-color: #ffffff; /* Color de texto del encabezado */
 }
@@ -16,6 +16,7 @@
   margin-bottom: 20px;
   font-size: 2.5em; /* Tamaño de fuente */
   font-weight: bold; /* Negrita */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .credit-requests-table {
@@ -36,10 +37,12 @@
 .credit-requests-table th {
   background-color: var(--header-bg-color); /* Color de fondo de encabezado */
   color: var(--header-text-color); /* Color de texto del encabezado */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.2em; /* Tamaño de fuente más grande para la primera fila */
 }
 
 .credit-requests-table tr:first-child {
-  font-size: 1.2em; /* Tamaño de fuente más grande para la primera fila */
+  font-size: 1em; /* Tamaño de fuente más grande para la primera fila */
 }
 
 .error-message {

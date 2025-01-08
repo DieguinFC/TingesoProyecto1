@@ -4,6 +4,8 @@ import capas.entidades.CreditType;
 import capas.repos.CreditTypeRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +13,13 @@ import capas.entidades.CreditRequestEntity;
 import capas.servicios.CreditService;
 import capas.servicios.UserService;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.core.io.UrlResource;
+import org.springframework.core.io.Resource;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
@@ -81,5 +89,36 @@ public class CreditController {
         CreditRequestEntity creditRequest = creditService.getCreditRequestById(id);
         return ResponseEntity.ok(creditRequest);
     }
+    @GetMapping("/files/{fileName}")
+    public ResponseEntity<Resource> getFile(@PathVariable String fileName) {
+        try {
+            // Decode the file name to handle URL encoding
+            String decodedFileName = URLDecoder.decode(fileName, StandardCharsets.UTF_8.toString());
+            System.out.println("Decoded file name: " + decodedFileName);
+
+            // Ruta base donde se almacenan los archivos.
+            Path filePath = Paths.get("C:/Users/d-cue/Documents/Programin/Tingeso/files").resolve(decodedFileName).normalize();
+            System.out.println("Resolved file path: " + filePath);
+
+            // Security check to prevent path traversal
+            if (!filePath.startsWith(Paths.get("C:/Users/d-cue/Documents/Programin/Tingeso/files").normalize())) {
+                throw new RuntimeException("Intento de acceso no autorizado al archivo: " + decodedFileName);
+            }
+
+            Resource resource = new UrlResource(filePath.toUri());
+
+            if (resource.exists() || resource.isReadable()) {
+                return ResponseEntity.ok()
+                        .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + decodedFileName + "\"")
+                        .body(resource);
+            } else {
+                throw new RuntimeException("No se puede leer el archivo: " + decodedFileName);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
 }
 

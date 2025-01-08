@@ -1,0 +1,44 @@
+/* Container for the PDF viewer */
+.pdf-viewer-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Canvas styling */
+  .pdf-viewer-container canvas {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Pagination controls */
+  .pagination-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pagination-controls button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #17daac;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+  }
+  
+  .pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination-controls p {
+    display: inline-block;
+    margin: 0 10px;
+    color: #000000;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
