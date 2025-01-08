@@ -95,7 +95,7 @@ function CreditSimulation() {
         </form>
 
         {/* Mostrar el resultado si está disponible */}
-        {monthlyPayment !== null && (
+        {monthlyPayment !== null && !errorMessage && (
           <div className="simulation-result">
             <h3>Cuota Mensual Simulada:</h3>
             <p>${formatNumber(monthlyPayment.toFixed(2))}</p>

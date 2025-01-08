@@ -94,6 +94,12 @@ function EvaluationProcess() {
     console.log("ID capturado desde la URL:", id);
     console.log("Datos a enviar:", dataToSend);
   
+    // Check if the Fetch API is supported
+    if (!window.fetch) {
+      alert("Fetch API is not supported in this browser. Please update your browser.");
+      return;
+    }
+  
     try {
       const response = await fetch("/api/credit-evaluation/evaluate", {
         method: "POST",
@@ -102,6 +108,9 @@ function EvaluationProcess() {
         },
         body: JSON.stringify(dataToSend),
       });
+  
+      console.log("Response status:", response.status);
+      console.log("Response status text:", response.statusText);
   
       if (response.ok) {
         const evaluation = await response.json();
@@ -116,9 +125,9 @@ function EvaluationProcess() {
     } catch (error) {
       console.error("Error al enviar la solicitud:", error);
       alert("Ocurrió un error inesperado al enviar la solicitud.");
+      window.history.back(); // Volver a la página anterior
     }
   };
-
   
   const handleCancel = () => {
     const userConfirmed = window.confirm("¿Estás seguro de que deseas cancelar? Los cambios no guardados se perderán.");

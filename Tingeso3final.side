@@ -1,0 +1,1659 @@
+{
+  "id": "3a64d10d-3c0c-4c71-bc87-84ff21e0060f",
+  "version": "2.0",
+  "name": "Tingeso3",
+  "url": "http://localhost:5173/credit-evaluation/evaluation/14",
+  "tests": [{
+    "id": "b49feab4-519c-4c73-9ebb-d7da4361e69b",
+    "name": "Normal Simulation",
+    "commands": [{
+      "id": "efdb1a34-e5fa-48f3-a0bb-dc4a7dc94a35",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2dd957a5-674f-4be0-8e6b-7642bf350c4f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x1030",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3162a6ac-be64-4e48-b65e-34f3b8d93e2d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button1",
+      "targets": [
+        ["css=.button1", "css:finder"],
+        ["xpath=//div[@id='root']/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Simulación de Crédito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fff8825d-1ed6-4975-8cb6-d28743f3ac8e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2acab6ea-c879-4634-8cba-e5f8a5f0bb9c",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='reo@bluelock.jp']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "reo@bluelock.jp"
+    }, {
+      "id": "c007bea3-8895-4853-95a3-51a497be756c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(2)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0031c35-1006-4de9-806c-8e67ac50347f",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(2)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='100.000.000']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "100.000.000"
+    }, {
+      "id": "650b8dc5-6449-44f2-93df-b676e433d872",
+      "comment": "",
+      "command": "click",
+      "target": "css=form",
+      "targets": [
+        ["css=form", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"],
+        ["xpath=//form[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "40591f9c-e90c-4573-8183-f357a1d1381d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(3)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3089dc6-e035-4764-920e-3f2e6df7ee4c",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(3)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "4.5"
+    }, {
+      "id": "d384a24f-cd12-4860-a329-e371c8870074",
+      "comment": "",
+      "command": "click",
+      "target": "css=form",
+      "targets": [
+        ["css=form", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"],
+        ["xpath=//form[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "447b9608-ee7c-4fce-833a-a235fabf866c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(4)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8138b04-db08-4ce7-ba17-3ea54c7f2f97",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(4)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "20"
+    }, {
+      "id": "c7d967f9-a21a-4b11-a16a-3528b0e03298",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7477fa16-90f8-4a87-98d3-1f08a267f4a0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.simulation-back-button",
+      "targets": [
+        ["css=.simulation-back-button", "css:finder"],
+        ["xpath=//div[@id='root']/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Volver')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d85e6714-a02d-4ddc-b4b2-9fe081be152c",
+    "name": "Simulation with unregisterd mail",
+    "commands": [{
+      "id": "25a1df4e-3874-4dc7-a544-ef8692123fd5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "402bf5a1-e6ba-41d1-a86f-ab7ec7e64d7d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x1030",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1fbbbf78-e06a-4f4e-9473-9dc4c6f5c50c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button1",
+      "targets": [
+        ["css=.button1", "css:finder"],
+        ["xpath=//div[@id='root']/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Simulación de Crédito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d8308d7-1749-47de-8730-e0f7ef48f06b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(2)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@value=''])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb2a8152-b1c1-4859-bfb5-4ccdd349a128",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "90e8f95a-ba55-4de9-8e64-46b6a26f13c6",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='hola@hola.cl']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "hola@hola.cl"
+    }, {
+      "id": "be7ba3f4-6ab7-42d2-9c0e-f0208c15df0d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(2)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a320044-46a3-49c0-a13c-da41e0dc8914",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(2)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='100.000.000']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "100.000.000"
+    }, {
+      "id": "fbc9fa9a-dc05-4f0a-889a-cbdc127835c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(3)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "08286adc-ff5e-41cf-a647-49f3fa7ba936",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(3)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "4.5"
+    }, {
+      "id": "fac63199-c64d-4e65-8c46-3991579457a1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(4)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "40390a75-bfe3-4aa0-8935-0190d9ae3f8f",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(4)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "20"
+    }, {
+      "id": "152b3d49-a8df-4358-969b-d6d082b51b68",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "6beee9af-c627-4a28-b270-caf4c86fd458",
+    "name": "Simulation force answers",
+    "commands": [{
+      "id": "e9a46c6b-36b9-49e8-9e30-8505aaa582ae",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8510130b-3e87-47cd-91a2-bd462f30115c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x1030",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e618dc7-4ec6-4269-a308-3f45623cbb6b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button1",
+      "targets": [
+        ["css=.button1", "css:finder"],
+        ["xpath=//div[@id='root']/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Simulación de Crédito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe925e62-7a0e-4ec1-93ec-cfe47ebf51d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2c82ac5-5141-4077-80cf-e881bc244ff9",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='diego@shezy.cl']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "diego@shezy.cl"
+    }, {
+      "id": "9a953df0-1aae-4d6b-ad38-57a17cc33c87",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc07b736-8652-441e-9ea6-78838ccc2221",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(2)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a78240e2-184d-4179-b33e-a21db049dd33",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(2)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='100.000.000']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "100.000.000"
+    }, {
+      "id": "c5b12748-b380-4fb1-9189-626e649b3da7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e58a161f-0f2a-40dd-b37d-df2f90a0877e",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(3)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "4.5"
+    }, {
+      "id": "42e59a3d-01ba-4b26-b6e2-7a0d2307a0e9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb1f8f5a-0c9b-449c-b494-5c7b2e14422c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(4)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "72b3b0e2-9a95-49cd-89d0-4a4fc68f4a4e",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(4)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "20"
+    }, {
+      "id": "cc7825db-7e36-472c-ad1f-f8cdc72a606e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "74375e72-2d60-4b29-bf85-1c76c1a3c817",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d9d0e03-bf1e-4610-8efd-ead317cf9bad",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47e21be9-bc9d-43ac-a11d-c688a48f0d3e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='diego@shezy.cl']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85c327e1-0b43-4c14-87d6-f6dc48442701",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='diego@she.zy']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "diego@she.zy"
+    }, {
+      "id": "f62210da-be0a-453f-97b0-857458fed672",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "db27682f-bc24-4440-bb24-3decaa9561d4",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "838ec8dd-84c4-4cee-8035-39f2cfa98a32",
+      "comment": "",
+      "command": "click",
+      "target": "css=form",
+      "targets": [
+        ["css=form", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"],
+        ["xpath=//form[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f8ffc27-9558-40c7-ae6c-735a0d6bdf4b",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='a@a']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "a@a"
+    }, {
+      "id": "29b03756-6236-441c-ac9a-c6047e72f6cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "35585bfc-770b-4411-abaa-b7d8f3f5ec33",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "63a32aa6-d81d-47fa-8895-a70707697b39",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.credit-simulation-button",
+      "targets": [
+        ["css=.credit-simulation-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3b2e888-4434-48ba-bf34-9b55ba97c12d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64bff93e-4f14-4e3d-9c2e-1584765b67ae",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(1)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='chigiri@bluelock.jp']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "chigiri@bluelock.jp"
+    }, {
+      "id": "e9ddd2a3-5b8a-4ce1-a8ba-8d4c27737be0",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(2)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='120.000.000']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "120.000.000"
+    }, {
+      "id": "53622dbf-d066-4e9b-9b8b-5b3ff384feb6",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-simulation-input:nth-child(4)",
+      "targets": [
+        ["css=.credit-simulation-input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@value='21']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "21"
+    }, {
+      "id": "e1324efc-33e0-4b76-b554-d47e4ff633ae",
+      "comment": "",
+      "command": "click",
+      "target": "css=form",
+      "targets": [
+        ["css=form", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"],
+        ["xpath=//form[contains(.,'Calcular Cuota Mensual')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9327a574-78ba-474e-882f-f6d80191596d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-simulation-container",
+      "targets": [
+        ["css=.credit-simulation-container", "css:finder"],
+        ["xpath=//div[@id='root']/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1a0d4749-3606-423c-bf6b-b1845cc4d2f6",
+    "name": "Normal Evaluation",
+    "commands": [{
+      "id": "d64c67d2-5306-45f5-a86b-d891a866ff11",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:5173/credit-evaluation/evaluation/14",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d416f15a-615e-4f87-8a48-88e6cd537e3c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4a1a61e5-1039-4619-8fcd-9b61fe321bb9",
+      "comment": "",
+      "command": "click",
+      "target": "name=quotaIncomeRatio",
+      "targets": [
+        ["name=quotaIncomeRatio", "name"],
+        ["css=.form-group:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='quotaIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "501619cd-d132-491f-a159-66403ec4e9d0",
+      "comment": "",
+      "command": "type",
+      "target": "name=quotaIncomeRatio",
+      "targets": [
+        ["name=quotaIncomeRatio", "name"],
+        ["css=.form-group:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='quotaIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "0.3"
+    }, {
+      "id": "3e88074b-5bfb-41e5-b0e0-5fc125a8739b",
+      "comment": "",
+      "command": "click",
+      "target": "name=maxAllowedQuotaIncomeRatio",
+      "targets": [
+        ["name=maxAllowedQuotaIncomeRatio", "name"],
+        ["css=.form-group:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='maxAllowedQuotaIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[2]/label/input", "xpath:idRelative"],
+        ["xpath=//div[2]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "68ea9fe2-0a27-431f-8816-3b99d5c1383d",
+      "comment": "",
+      "command": "type",
+      "target": "name=maxAllowedQuotaIncomeRatio",
+      "targets": [
+        ["name=maxAllowedQuotaIncomeRatio", "name"],
+        ["css=.form-group:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='maxAllowedQuotaIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[2]/label/input", "xpath:idRelative"],
+        ["xpath=//div[2]/label/input", "xpath:position"]
+      ],
+      "value": "0.5"
+    }, {
+      "id": "4fbe7e6d-a34d-4a0c-b04c-80d21a939214",
+      "comment": "",
+      "command": "click",
+      "target": "name=creditHistoryStatus",
+      "targets": [
+        ["name=creditHistoryStatus", "name"],
+        ["css=.form-group:nth-child(3) select", "css:finder"],
+        ["xpath=//select[@name='creditHistoryStatus']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[3]/label/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33fbbe8d-fef6-471b-8f4e-d5a0c97646c6",
+      "comment": "",
+      "command": "click",
+      "target": "name=creditHistoryStatus",
+      "targets": [
+        ["name=creditHistoryStatus", "name"],
+        ["css=.form-group:nth-child(3) select", "css:finder"],
+        ["xpath=//select[@name='creditHistoryStatus']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[3]/label/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f749d4d8-1413-41f2-a21c-61aa3b0b4a46",
+      "comment": "",
+      "command": "select",
+      "target": "name=creditHistoryStatus",
+      "targets": [],
+      "value": "label=Bueno"
+    }, {
+      "id": "06383e8b-88ff-46eb-ac70-963cd589f5a9",
+      "comment": "",
+      "command": "click",
+      "target": "name=creditHistoryComments",
+      "targets": [
+        ["name=creditHistoryComments", "name"],
+        ["css=.form-group:nth-child(4) textarea", "css:finder"],
+        ["xpath=//textarea[@name='creditHistoryComments']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[4]/label/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16e49929-57e7-4be6-81ca-1644f72f69c1",
+      "comment": "",
+      "command": "type",
+      "target": "name=creditHistoryComments",
+      "targets": [
+        ["name=creditHistoryComments", "name"],
+        ["css=.form-group:nth-child(4) textarea", "css:finder"],
+        ["xpath=//textarea[@name='creditHistoryComments']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[4]/label/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "holaaaaaa"
+    }, {
+      "id": "0bc0a18e-075b-4f86-87d9-5e0da82c4a99",
+      "comment": "",
+      "command": "click",
+      "target": "name=employmentYears",
+      "targets": [
+        ["name=employmentYears", "name"],
+        ["css=.form-group:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='employmentYears']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[5]/label/input", "xpath:idRelative"],
+        ["xpath=//div[5]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "29dc8785-173e-4975-8931-359542d912cf",
+      "comment": "",
+      "command": "type",
+      "target": "name=employmentYears",
+      "targets": [
+        ["name=employmentYears", "name"],
+        ["css=.form-group:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='employmentYears']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[5]/label/input", "xpath:idRelative"],
+        ["xpath=//div[5]/label/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "9519d507-4bf5-46d6-935a-3b88b88e0a31",
+      "comment": "",
+      "command": "click",
+      "target": "name=employmentType",
+      "targets": [
+        ["name=employmentType", "name"],
+        ["css=.form-group:nth-child(6) select", "css:finder"],
+        ["xpath=//select[@name='employmentType']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[6]/label/select", "xpath:idRelative"],
+        ["xpath=//div[6]/label/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf929357-83d8-4d05-a49c-f10587df1fef",
+      "comment": "",
+      "command": "select",
+      "target": "name=employmentType",
+      "targets": [],
+      "value": "label=Fijo"
+    }, {
+      "id": "c36ed157-9c74-4281-a74f-05f50470e1ed",
+      "comment": "",
+      "command": "click",
+      "target": "name=debtIncomeRatio",
+      "targets": [
+        ["name=debtIncomeRatio", "name"],
+        ["css=.form-group:nth-child(7) input", "css:finder"],
+        ["xpath=//input[@name='debtIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[7]/label/input", "xpath:idRelative"],
+        ["xpath=//div[7]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3fa573f4-a3a1-4328-adb3-1dc0c199e9bc",
+      "comment": "",
+      "command": "type",
+      "target": "name=debtIncomeRatio",
+      "targets": [
+        ["name=debtIncomeRatio", "name"],
+        ["css=.form-group:nth-child(7) input", "css:finder"],
+        ["xpath=//input[@name='debtIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[7]/label/input", "xpath:idRelative"],
+        ["xpath=//div[7]/label/input", "xpath:position"]
+      ],
+      "value": "0.5"
+    }, {
+      "id": "15bdaf10-d0cc-482e-a166-46259d5ed195",
+      "comment": "",
+      "command": "click",
+      "target": "name=maxAllowedDebtIncomeRatio",
+      "targets": [
+        ["name=maxAllowedDebtIncomeRatio", "name"],
+        ["css=.form-group:nth-child(8) input", "css:finder"],
+        ["xpath=//input[@name='maxAllowedDebtIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[8]/label/input", "xpath:idRelative"],
+        ["xpath=//div[8]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7cc9f27e-7314-4dc8-b5be-48ba64a4d762",
+      "comment": "",
+      "command": "type",
+      "target": "name=maxAllowedDebtIncomeRatio",
+      "targets": [
+        ["name=maxAllowedDebtIncomeRatio", "name"],
+        ["css=.form-group:nth-child(8) input", "css:finder"],
+        ["xpath=//input[@name='maxAllowedDebtIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[8]/label/input", "xpath:idRelative"],
+        ["xpath=//div[8]/label/input", "xpath:position"]
+      ],
+      "value": "0.6"
+    }, {
+      "id": "f452bced-c713-4eb5-8fff-ec8d0bf65928",
+      "comment": "",
+      "command": "click",
+      "target": "name=requestedAmount",
+      "targets": [
+        ["name=requestedAmount", "name"],
+        ["css=.form-group:nth-child(9) input", "css:finder"],
+        ["xpath=//input[@name='requestedAmount']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[9]/label/input", "xpath:idRelative"],
+        ["xpath=//div[9]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b040012-f543-40d6-a611-f7c4ac0b581d",
+      "comment": "",
+      "command": "type",
+      "target": "name=requestedAmount",
+      "targets": [
+        ["name=requestedAmount", "name"],
+        ["css=.form-group:nth-child(9) input", "css:finder"],
+        ["xpath=//input[@name='requestedAmount']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[9]/label/input", "xpath:idRelative"],
+        ["xpath=//div[9]/label/input", "xpath:position"]
+      ],
+      "value": "100000000"
+    }, {
+      "id": "97fc80d4-2a49-4e89-84ea-420ec41af7bc",
+      "comment": "",
+      "command": "click",
+      "target": "name=propertyValue",
+      "targets": [
+        ["name=propertyValue", "name"],
+        ["css=.form-group:nth-child(10) input", "css:finder"],
+        ["xpath=//input[@name='propertyValue']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[10]/label/input", "xpath:idRelative"],
+        ["xpath=//div[10]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1e418ba-00ad-474d-be3c-433a3ff2f4c6",
+      "comment": "",
+      "command": "type",
+      "target": "name=propertyValue",
+      "targets": [
+        ["name=propertyValue", "name"],
+        ["css=.form-group:nth-child(10) input", "css:finder"],
+        ["xpath=//input[@name='propertyValue']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[10]/label/input", "xpath:idRelative"],
+        ["xpath=//div[10]/label/input", "xpath:position"]
+      ],
+      "value": "1000000000"
+    }, {
+      "id": "e6f75b36-4430-4e55-b979-fbccc63986c8",
+      "comment": "",
+      "command": "click",
+      "target": "name=maxfinancingPercentage",
+      "targets": [
+        ["name=maxfinancingPercentage", "name"],
+        ["css=.form-group:nth-child(11) input", "css:finder"],
+        ["xpath=//input[@name='maxfinancingPercentage']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[11]/label/input", "xpath:idRelative"],
+        ["xpath=//div[11]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7064370-ba6a-460a-bd26-3feb53619bd8",
+      "comment": "",
+      "command": "type",
+      "target": "name=maxfinancingPercentage",
+      "targets": [
+        ["name=maxfinancingPercentage", "name"],
+        ["css=.form-group:nth-child(11) input", "css:finder"],
+        ["xpath=//input[@name='maxfinancingPercentage']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[11]/label/input", "xpath:idRelative"],
+        ["xpath=//div[11]/label/input", "xpath:position"]
+      ],
+      "value": "0.8"
+    }, {
+      "id": "f5a0f1bb-1144-4772-b7fb-6476cd27fb9d",
+      "comment": "",
+      "command": "click",
+      "target": "name=applicantAge",
+      "targets": [
+        ["name=applicantAge", "name"],
+        ["css=.form-group:nth-child(12) input", "css:finder"],
+        ["xpath=//input[@name='applicantAge']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[12]/label/input", "xpath:idRelative"],
+        ["xpath=//div[12]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1159d55-72c5-4fa1-ab4b-9b4a5d404e88",
+      "comment": "",
+      "command": "type",
+      "target": "name=applicantAge",
+      "targets": [
+        ["name=applicantAge", "name"],
+        ["css=.form-group:nth-child(12) input", "css:finder"],
+        ["xpath=//input[@name='applicantAge']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[12]/label/input", "xpath:idRelative"],
+        ["xpath=//div[12]/label/input", "xpath:position"]
+      ],
+      "value": "30"
+    }, {
+      "id": "bbeb6af1-5f3e-4458-a7c7-98fe62a5df2b",
+      "comment": "",
+      "command": "click",
+      "target": "name=maxAgeAllowedAtLoanEnd",
+      "targets": [
+        ["name=maxAgeAllowedAtLoanEnd", "name"],
+        ["css=.form-group:nth-child(13) input", "css:finder"],
+        ["xpath=//input[@name='maxAgeAllowedAtLoanEnd']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[13]/label/input", "xpath:idRelative"],
+        ["xpath=//div[13]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "944e16a5-aab1-4691-a5b5-37643c3cafc7",
+      "comment": "",
+      "command": "type",
+      "target": "name=maxAgeAllowedAtLoanEnd",
+      "targets": [
+        ["name=maxAgeAllowedAtLoanEnd", "name"],
+        ["css=.form-group:nth-child(13) input", "css:finder"],
+        ["xpath=//input[@name='maxAgeAllowedAtLoanEnd']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[13]/label/input", "xpath:idRelative"],
+        ["xpath=//div[13]/label/input", "xpath:position"]
+      ],
+      "value": "75"
+    }, {
+      "id": "32e54526-9c45-4b1d-806c-e7d84b8af9fd",
+      "comment": "",
+      "command": "click",
+      "target": "name=savingsBalance",
+      "targets": [
+        ["name=savingsBalance", "name"],
+        ["css=.form-group:nth-child(14) input", "css:finder"],
+        ["xpath=//input[@name='savingsBalance']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[14]/label/input", "xpath:idRelative"],
+        ["xpath=//div[14]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd18c2b2-6b23-450c-8e35-0f28e23d35bf",
+      "comment": "",
+      "command": "type",
+      "target": "name=savingsBalance",
+      "targets": [
+        ["name=savingsBalance", "name"],
+        ["css=.form-group:nth-child(14) input", "css:finder"],
+        ["xpath=//input[@name='savingsBalance']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[14]/label/input", "xpath:idRelative"],
+        ["xpath=//div[14]/label/input", "xpath:position"]
+      ],
+      "value": "10000000"
+    }, {
+      "id": "3013beb2-daf8-4657-89ea-e63f05a0b16c",
+      "comment": "",
+      "command": "click",
+      "target": "name=minSavingsRequired",
+      "targets": [
+        ["name=minSavingsRequired", "name"],
+        ["css=.form-group:nth-child(15) input", "css:finder"],
+        ["xpath=//input[@name='minSavingsRequired']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[15]/label/input", "xpath:idRelative"],
+        ["xpath=//div[15]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c26e195-c91e-4aa6-baa4-38b048c69f2e",
+      "comment": "",
+      "command": "type",
+      "target": "name=minSavingsRequired",
+      "targets": [
+        ["name=minSavingsRequired", "name"],
+        ["css=.form-group:nth-child(15) input", "css:finder"],
+        ["xpath=//input[@name='minSavingsRequired']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[15]/label/input", "xpath:idRelative"],
+        ["xpath=//div[15]/label/input", "xpath:position"]
+      ],
+      "value": "5000000"
+    }, {
+      "id": "93c6ff40-ac9b-402b-85ef-682d6b4c603a",
+      "comment": "",
+      "command": "click",
+      "target": "name=savingsConsistency",
+      "targets": [
+        ["name=savingsConsistency", "name"],
+        ["css=.form-group:nth-child(16) select", "css:finder"],
+        ["xpath=//select[@name='savingsConsistency']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[16]/label/select", "xpath:idRelative"],
+        ["xpath=//div[16]/label/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61023449-c88d-4005-90ad-69f458fd52aa",
+      "comment": "",
+      "command": "select",
+      "target": "name=savingsConsistency",
+      "targets": [],
+      "value": "label=Consistente"
+    }, {
+      "id": "afa0f3b8-258f-42b6-bc68-166dad62af50",
+      "comment": "",
+      "command": "click",
+      "target": "name=savingsComments",
+      "targets": [
+        ["name=savingsComments", "name"],
+        ["css=.form-group:nth-child(17) textarea", "css:finder"],
+        ["xpath=//textarea[@name='savingsComments']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[17]/label/textarea", "xpath:idRelative"],
+        ["xpath=//div[17]/label/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1831d0c9-5af8-4fdb-9366-ee9dfe70a97b",
+      "comment": "",
+      "command": "type",
+      "target": "name=savingsComments",
+      "targets": [
+        ["name=savingsComments", "name"],
+        ["css=.form-group:nth-child(17) textarea", "css:finder"],
+        ["xpath=//textarea[@name='savingsComments']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[17]/label/textarea", "xpath:idRelative"],
+        ["xpath=//div[17]/label/textarea", "xpath:position"]
+      ],
+      "value": "bueno"
+    }, {
+      "id": "014569db-b8e1-4c9e-9007-cdb8f04692bf",
+      "comment": "",
+      "command": "click",
+      "target": "name=evaluationResult",
+      "targets": [
+        ["name=evaluationResult", "name"],
+        ["css=.form-group:nth-child(18) select", "css:finder"],
+        ["xpath=//select[@name='evaluationResult']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[18]/label/select", "xpath:idRelative"],
+        ["xpath=//div[18]/label/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d079297-4877-4947-bded-aec14ed9d752",
+      "comment": "",
+      "command": "select",
+      "target": "name=evaluationResult",
+      "targets": [],
+      "value": "label=Aprobado"
+    }, {
+      "id": "32ef79cb-9c85-4046-b035-35d9b28b221e",
+      "comment": "",
+      "command": "click",
+      "target": "name=evaluationComments",
+      "targets": [
+        ["name=evaluationComments", "name"],
+        ["css=.form-group:nth-child(19) textarea", "css:finder"],
+        ["xpath=//textarea[@name='evaluationComments']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[19]/label/textarea", "xpath:idRelative"],
+        ["xpath=//div[19]/label/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2852f58e-6081-4357-b472-47dcf110e4bf",
+      "comment": "",
+      "command": "type",
+      "target": "name=evaluationComments",
+      "targets": [
+        ["name=evaluationComments", "name"],
+        ["css=.form-group:nth-child(19) textarea", "css:finder"],
+        ["xpath=//textarea[@name='evaluationComments']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[19]/label/textarea", "xpath:idRelative"],
+        ["xpath=//div[19]/label/textarea", "xpath:position"]
+      ],
+      "value": "god"
+    }, {
+      "id": "f265f89a-9c9b-4a42-a90d-5bc9f418e8ff",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit-button",
+      "targets": [
+        ["css=.submit-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[20]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Guardar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0c064152-8a8e-4783-aea9-67d92bc5baa1",
+    "name": "Credit Request without files",
+    "commands": [{
+      "id": "6d23ad39-4692-441e-b5b2-59c30d0bf03d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce7c219e-c6b6-41f9-8cc4-6a5043a77e97",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ed475b4e-72e1-4ef3-892d-73974e486527",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button3",
+      "targets": [
+        ["css=.button3", "css:finder"],
+        ["xpath=//div[@id='root']/div/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Solicitud de Crédito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6fb6024-591f-46d0-8bbd-f9993cc5b847",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-request-group:nth-child(1) > .credit-request-input",
+      "targets": [
+        ["css=.credit-request-group:nth-child(1) > .credit-request-input", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "29aea98d-edd2-4c7f-a549-712d5acb91fc",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-request-group:nth-child(1) > .credit-request-input",
+      "targets": [
+        ["css=.credit-request-group:nth-child(1) > .credit-request-input", "css:finder"],
+        ["xpath=//input[@value='nagi@bluelock.jp']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "nagi@bluelock.jp"
+    }, {
+      "id": "6ae07059-e2d7-4429-b019-efa45a4c5f12",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-request-group:nth-child(2)",
+      "targets": [
+        ["css=.credit-request-group:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/form/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09101b42-9447-4778-84dc-d7df47e8a913",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-request-group:nth-child(2) > .credit-request-input",
+      "targets": [
+        ["css=.credit-request-group:nth-child(2) > .credit-request-input", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "84b603eb-c474-46e0-a327-85024098bd04",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-request-group:nth-child(2) > .credit-request-input",
+      "targets": [
+        ["css=.credit-request-group:nth-child(2) > .credit-request-input", "css:finder"],
+        ["xpath=//input[@value='100.000.000']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "100.000.000"
+    }, {
+      "id": "ef6ee660-02d7-4455-84bb-e4fdebd8a247",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-request-group:nth-child(3) > .credit-request-input",
+      "targets": [
+        ["css=.credit-request-group:nth-child(3) > .credit-request-input", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c26b598e-f630-43ea-920f-a8b1c75fd14d",
+      "comment": "",
+      "command": "type",
+      "target": "css=.credit-request-group:nth-child(3) > .credit-request-input",
+      "targets": [
+        ["css=.credit-request-group:nth-child(3) > .credit-request-input", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "20"
+    }, {
+      "id": "fddbab99-8cac-468e-8bae-945abd7af3a7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-request-group:nth-child(4) > .credit-request-input",
+      "targets": [
+        ["css=.credit-request-group:nth-child(4) > .credit-request-input", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/form/div[4]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95024156-e4c8-4381-bf46-220034e0842f",
+      "comment": "",
+      "command": "select",
+      "target": "css=.credit-request-group:nth-child(4) > .credit-request-input",
+      "targets": [],
+      "value": "label=Primera Vivienda"
+    }, {
+      "id": "d95c93bb-69c3-442d-bedf-1fb1633d0010",
+      "comment": "",
+      "command": "click",
+      "target": "css=.credit-registration-button",
+      "targets": [
+        ["css=.credit-registration-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrar y Solicitar Crédito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "6aef127c-bd11-4d85-b4c9-ba1af2704a43",
+    "name": "Evaluation files",
+    "commands": [{
+      "id": "04fe5c8c-ee4a-4c3e-802b-48ada4f63e09",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:5173/credit-evaluation/evaluation/14",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d258357-f166-4854-b7c5-a40879377829",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fdabee8e-a787-4d15-b99f-6bddd6d152a6",
+      "comment": "",
+      "command": "click",
+      "target": "css=li > button",
+      "targets": [
+        ["css=li > button", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/ul/li/button", "xpath:idRelative"],
+        ["xpath=//li/button", "xpath:position"],
+        ["xpath=//button[contains(.,'1736319624731_fondo_solidario_209506904.pdf')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "62f09020-df71-4112-aece-36eb9f473353",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pagination-controls > button:nth-child(2)",
+      "targets": [
+        ["css=.pagination-controls > button:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Next')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fa5da78-e382-40ab-aef6-e4ef9e0f9c0a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pagination-controls > button:nth-child(2)",
+      "targets": [
+        ["css=.pagination-controls > button:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Next')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "58f9ceed-1969-40a4-add0-ad45b4558b67",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pagination-controls > button:nth-child(1)",
+      "targets": [
+        ["css=.pagination-controls > button:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Previous')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61bf63be-c51d-448f-93ad-9417725acec0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pagination-controls > button:nth-child(1)",
+      "targets": [
+        ["css=.pagination-controls > button:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Previous')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "3bdb31ab-f1ec-4ac1-b40e-7328dac5d131",
+    "name": "Evaluation cancel",
+    "commands": [{
+      "id": "2064712f-c71c-49e6-b866-cb9610147b20",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:5173/credit-evaluation/evaluation/14",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "033890c3-7f8d-42e8-90fa-c204fb262673",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ffc6dd9a-ea3f-4ea2-ad06-1769ab3740b9",
+      "comment": "",
+      "command": "click",
+      "target": "name=quotaIncomeRatio",
+      "targets": [
+        ["name=quotaIncomeRatio", "name"],
+        ["css=.form-group:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='quotaIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0a9c32a-865f-4154-a398-3d12d098a07a",
+      "comment": "",
+      "command": "type",
+      "target": "name=quotaIncomeRatio",
+      "targets": [
+        ["name=quotaIncomeRatio", "name"],
+        ["css=.form-group:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='quotaIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "0.3"
+    }, {
+      "id": "b8e6bc02-5fbc-4ac5-bed7-8b9ce2b426e9",
+      "comment": "",
+      "command": "click",
+      "target": "name=maxAllowedQuotaIncomeRatio",
+      "targets": [
+        ["name=maxAllowedQuotaIncomeRatio", "name"],
+        ["css=.form-group:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='maxAllowedQuotaIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[2]/label/input", "xpath:idRelative"],
+        ["xpath=//div[2]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d7d96a6-bebb-4945-ae12-daab6c29fd01",
+      "comment": "",
+      "command": "type",
+      "target": "name=maxAllowedQuotaIncomeRatio",
+      "targets": [
+        ["name=maxAllowedQuotaIncomeRatio", "name"],
+        ["css=.form-group:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='maxAllowedQuotaIncomeRatio']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[2]/label/input", "xpath:idRelative"],
+        ["xpath=//div[2]/label/input", "xpath:position"]
+      ],
+      "value": "0.5"
+    }, {
+      "id": "4d89c899-04da-4a97-af0b-1ad5933c02db",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-group:nth-child(3) > label",
+      "targets": [
+        ["css=.form-group:nth-child(3) > label", "css:finder"],
+        ["xpath=//div[@id='root']/div/form/div[3]/label", "xpath:idRelative"],
+        ["xpath=//div[3]/label", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75ab9d47-0186-4f77-b244-a532d57a5038",
+      "comment": "",
+      "command": "click",
+      "target": "name=creditHistoryStatus",
+      "targets": [
+        ["name=creditHistoryStatus", "name"],
+        ["css=.form-group:nth-child(3) select", "css:finder"],
+        ["xpath=//select[@name='creditHistoryStatus']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[3]/label/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd11d168-c837-44d2-b78e-dfc897ab4a09",
+      "comment": "",
+      "command": "select",
+      "target": "name=creditHistoryStatus",
+      "targets": [],
+      "value": "label=Regular"
+    }, {
+      "id": "e2c7241b-824d-43e7-a293-8ca9d9fc2735",
+      "comment": "",
+      "command": "click",
+      "target": "name=creditHistoryComments",
+      "targets": [
+        ["name=creditHistoryComments", "name"],
+        ["css=.form-group:nth-child(4) textarea", "css:finder"],
+        ["xpath=//textarea[@name='creditHistoryComments']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[4]/label/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7076634-bb46-42b2-97a9-e08ae3e36f71",
+      "comment": "",
+      "command": "type",
+      "target": "name=creditHistoryComments",
+      "targets": [
+        ["name=creditHistoryComments", "name"],
+        ["css=.form-group:nth-child(4) textarea", "css:finder"],
+        ["xpath=//textarea[@name='creditHistoryComments']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[4]/label/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "hola"
+    }, {
+      "id": "d7c58a7d-8279-48a6-b528-06bcc7c0b266",
+      "comment": "",
+      "command": "click",
+      "target": "css=.evaluation-form",
+      "targets": [
+        ["css=.evaluation-form", "css:finder"],
+        ["xpath=//div[@id='root']/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a46cdfb-a366-415f-be7e-f106493cad94",
+      "comment": "",
+      "command": "click",
+      "target": "name=employmentYears",
+      "targets": [
+        ["name=employmentYears", "name"],
+        ["css=.form-group:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='employmentYears']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[5]/label/input", "xpath:idRelative"],
+        ["xpath=//div[5]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e707f0b0-7712-4905-a8a3-f85aa874a87a",
+      "comment": "",
+      "command": "type",
+      "target": "name=employmentYears",
+      "targets": [
+        ["name=employmentYears", "name"],
+        ["css=.form-group:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='employmentYears']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[5]/label/input", "xpath:idRelative"],
+        ["xpath=//div[5]/label/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "0bc52a03-6c5a-4f48-8147-3450652d852c",
+      "comment": "",
+      "command": "click",
+      "target": "name=employmentType",
+      "targets": [
+        ["name=employmentType", "name"],
+        ["css=.form-group:nth-child(6) select", "css:finder"],
+        ["xpath=//select[@name='employmentType']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[6]/label/select", "xpath:idRelative"],
+        ["xpath=//div[6]/label/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d57b8ed0-bbdd-464b-8d16-7829334cb0f0",
+      "comment": "",
+      "command": "select",
+      "target": "name=employmentType",
+      "targets": [],
+      "value": "label=Fijo"
+    }, {
+      "id": "a73583b9-27d3-4900-9752-ab43e5b60a8c",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba292962-0e8d-4ca1-89df-e2c9672765d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cancel-button",
+      "targets": [
+        ["css=.cancel-button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/form/div[20]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Cancelar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "7c41b2e7-0f55-4159-9607-c24d9c89531a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:5173/", "http://localhost:5173/credit-evaluation/evaluation/14"],
+  "plugins": []
+}
